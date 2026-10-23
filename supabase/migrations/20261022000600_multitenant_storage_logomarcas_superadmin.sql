@@ -33,7 +33,10 @@ CREATE POLICY "Exclusao de logomarcas das lojas"
   TO anon, authenticated
   USING (bucket_id = 'logomarcas');
 
--- 2. Atualiza as políticas RLS das tabelas para suportar múltiplas Lojas (Multi-Tenant)
+-- 2. Garante coluna `ativa` / `ativo` na tabela `public.lojas` e atualiza as políticas RLS para suportar múltiplas Lojas (Multi-Tenant)
+ALTER TABLE public.lojas ADD COLUMN IF NOT EXISTS ativa BOOLEAN NOT NULL DEFAULT TRUE;
+ALTER TABLE public.lojas ADD COLUMN IF NOT EXISTS ativo BOOLEAN NOT NULL DEFAULT TRUE;
+
 -- quando autenticadas via tabela `usuarios_cim` (chave publishable/anon)
 DROP POLICY IF EXISTS "Acesso a propria Loja" ON public.lojas;
 DROP POLICY IF EXISTS "Multi-tenant acesso lojas" ON public.lojas;

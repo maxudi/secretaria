@@ -931,7 +931,7 @@ export async function autenticarPorCim(
 
           if (
             lojaRow &&
-            lojaRow.ativa === false &&
+            (lojaRow.ativo === false || lojaRow.ativa === false) &&
             matchRow.papel !== 'super_admin'
           ) {
             return {
@@ -1086,7 +1086,7 @@ export async function listarTodasLojasTenantSupabase(): Promise<LojaTenant[]> {
         emailLoja: String(l.email_loja || ''),
         gestao: String(l.gestao_atual || '2025-2027'),
         logoUrl: String(l.logo_url || ''),
-        ativa: l.ativa !== false,
+        ativa: l.ativo !== false && l.ativa !== false,
         createdAt: l.created_at,
       }));
       localStorage.setItem(STORAGE_KEY_LOJAS_TENANTS, JSON.stringify(mapeadas));
@@ -1195,7 +1195,7 @@ export async function criarOuAtualizarLojaComAdminSupabase(params: {
         email_loja: novaLoja.emailLoja || null,
         gestao_atual: novaLoja.gestao,
         logo_url: novaLoja.logoUrl || null,
-        ativa: true,
+        ativo: true,
       },
       { onConflict: 'id' }
     );
@@ -1305,7 +1305,7 @@ export async function alternarStatusLojaTenantSupabase(
   ativa: boolean
 ): Promise<void> {
   if (!supabaseClient) return;
-  await supabaseClient.from('lojas').update({ ativa }).eq('id', lojaId);
+  await supabaseClient.from('lojas').update({ ativo: ativa }).eq('id', lojaId);
 }
 
 const SEED_BALAUSTRE_57_ROW: BalaustreSupabaseRow = {

@@ -1,0 +1,2778 @@
+[
+  {
+    "numero": "N°",
+    "nome": "Loja",
+    "sessao": "Sessão",
+    "rito": "Rito",
+    "endereco": "Endereço",
+    "cidade": "Cidade"
+  },
+  {
+    "numero": "99",
+    "nome": "PALEM - PODEROSA ASSEMBLEIA LEGISLATIVA ESTADUAL MAÇÔNICA",
+    "sessao": "",
+    "rito": "",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "228",
+    "nome": "UNIÃO HUMANITÁRIA CENTRAL",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ELIAS TEOTÔNIO, 33, CENTRO - CEP 38525-000.",
+    "cidade": "ESTRELA DO SUL / MG"
+  },
+  {
+    "numero": "322",
+    "nome": "UNIÃO E CARIDADE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA CARLOS CAMARGOS, 256, CENTRO - CEP 38140-000.",
+    "cidade": "PRATA / MG"
+  },
+  {
+    "numero": "326",
+    "nome": "GUILHERME DIAS",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SILVIANO BRANDÃO, 407, CENTRO - CEP 37750-000.",
+    "cidade": "MACHADO / MG"
+  },
+  {
+    "numero": "394",
+    "nome": "NOVA LUZ PARACATUENSE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DA ABADIA, 79, CENTRO - CEP 38600-000.",
+    "cidade": "PARACATU / MG"
+  },
+  {
+    "numero": "506",
+    "nome": "DEUS, HUMANIDADE E LUZ",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "518",
+    "nome": "CARIDADE E FIRMEZA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO MODERNO",
+    "endereco": "RUA LEOPOLDO SCHMIDT, 168, CENTRO - CEP 36060-040.",
+    "cidade": "JUIZ DE FORA / MG"
+  },
+  {
+    "numero": "519",
+    "nome": "CONFRATERNIDADE MINEIRA",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PAULO PELÚCIO Nº 23, 23, CENTRO - CEP 37443-000.",
+    "cidade": "BAEPENDI / MG"
+  },
+  {
+    "numero": "525",
+    "nome": "LUZ E CARIDADE",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA CESÁRIO ALVIM , 606, CENTRO - CEP 38400-098.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "539",
+    "nome": "ESTRELA MONTEALEGRENSE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA CEL. RIBEIRO GUIMARAES, 78, CENTRO - CEP 38475-000.",
+    "cidade": "MONTE ALEGRE DE MINAS / MG"
+  },
+  {
+    "numero": "542",
+    "nome": "FERNANDO OSÓRIO",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MISAEL SANDOVAL Nº 138, 138, CENTRO - CEP 37810-000.",
+    "cidade": "GUARANÉSIA / MG"
+  },
+  {
+    "numero": "562",
+    "nome": "GAL. JOSÉ MARIA MOREIRA GUIMARÃES",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 31741-609.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "563",
+    "nome": "CRUZEIRO DE MINAS",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JUSCELINO KUBITSCHEK DE OLIVEIRA, 319, CENTRO - CEP 37580-000.",
+    "cidade": "MONTE SIÃO / MG"
+  },
+  {
+    "numero": "573",
+    "nome": "VERDADEIRA CARIDADE",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PEDRO DE OLIVEIRA, 162, CENTRO - CEP 36800-000.",
+    "cidade": "CARANGOLA / MG"
+  },
+  {
+    "numero": "574",
+    "nome": "BELLO HORIZONTE",
+    "sessao": "1ª E 3ª SEGUNDA-FEIRA 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "580",
+    "nome": "DEUS E CARIDADE",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PRAÇA ANÍBAL ZORANTINI, 61, CENTRO - CEP 37570-000.",
+    "cidade": "OURO FINO / MG"
+  },
+  {
+    "numero": "589",
+    "nome": "UNIÃO DE MANHUAÇU",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA LAFAYETTE VASCONCELOS SABIDO, 22, CENTRO - CEP 36908-899.",
+    "cidade": "MANHUAÇU / MG"
+  },
+  {
+    "numero": "606",
+    "nome": "MINAS LIVRE ESPERANÇA",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SANTO ANTONIO, 525, CENTRO - CEP 37590-000.",
+    "cidade": "JACUTINGA / MG"
+  },
+  {
+    "numero": "634",
+    "nome": "AMOR À ORDEM",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. PRESIDENTE GETULIO VARGAS, 141, CENTRO - CEP 36680-057.",
+    "cidade": "SÃO JOÃO NEPOMUCENO / MG"
+  },
+  {
+    "numero": "695",
+    "nome": "ASPÁSIA HIRAM DO PARAÍBA",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ANTONIO MARTINS, 91, CENTRO - CEP 36660-000.",
+    "cidade": "ALÉM PARAÍBA / MG"
+  },
+  {
+    "numero": "727",
+    "nome": "FRATERNIDADE UBAENSE",
+    "sessao": "",
+    "rito": "",
+    "endereco": "TRAVESSA ISAÍAS B. NAZARETH, 38, CENTRO - CEP 36500-004.",
+    "cidade": "UBÁ / MG"
+  },
+  {
+    "numero": "759",
+    "nome": "ALFENAS LIVRE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA BENJAMIM COSTANT, 790, CENTRO - CEP 37130-001.",
+    "cidade": "ALFENAS / MG"
+  },
+  {
+    "numero": "828",
+    "nome": "LIBERDADE E AMOR",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA CEL. SATURNINO PEREIRA, 595, CENTRO - CEP 37980-000.",
+    "cidade": "CÁSSIA / MG"
+  },
+  {
+    "numero": "836",
+    "nome": "HAROLDO DA SILVA MENDES",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA ARTHUR BERNARDES, 45, AREAL - CEP 36606-000.",
+    "cidade": "GUARARÁ / MG"
+  },
+  {
+    "numero": "870",
+    "nome": "FLORIANO PEIXOTO",
+    "sessao": "4ª FEIRA - 19:30H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. DR. AMERICO MARTINS DA COSTA, 158, CENTRO - CEP 35200-000.",
+    "cidade": "AIMORÉS / MG"
+  },
+  {
+    "numero": "916",
+    "nome": "HONRA E DEVER",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOSÉ BONIFÁCIO, 216, CENTRO - CEP 37820-000.",
+    "cidade": "ARCEBURGO / MG"
+  },
+  {
+    "numero": "922",
+    "nome": "CARATINGA LIVRE",
+    "sessao": "5ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RAUL SOARES, 194, CENTRO - CEP 35300-020.",
+    "cidade": "CARATINGA / MG"
+  },
+  {
+    "numero": "924",
+    "nome": "UNIÃO ARAGUARINA",
+    "sessao": "2ª FEIRA - 19:30H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PRAÇA FARID NADER, 79, CENTRO - CEP 38440-135.",
+    "cidade": "ARAGUARI / MG"
+  },
+  {
+    "numero": "941",
+    "nome": "ESTRELA UBERABENSE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PÇ COMENDADOR QUINTINO, 272, ESTADOS UNIDOS - CEP 38015-410.",
+    "cidade": "UBERABA / MG"
+  },
+  {
+    "numero": "950",
+    "nome": "LABOR, FORÇA E VIRTUDE",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. PRESIDENTE ARTHUR BERNARDES, 37, CENTRO - CEP 36880-001.",
+    "cidade": "MURIAÉ / MG"
+  },
+  {
+    "numero": "954",
+    "nome": "DEUS E CARIDADE",
+    "sessao": "TERÇA-FEIRA - 19:30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DONA INÁCIA, 163, CENTRO - CEP 37200-001.",
+    "cidade": "LAVRAS / MG"
+  },
+  {
+    "numero": "968",
+    "nome": "CIÊNCIA E VIRTUDE",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PROFESSOR LULU, 230, BELA VISTA - CEP 35574-219.",
+    "cidade": "FORMIGA / MG"
+  },
+  {
+    "numero": "969",
+    "nome": "PROPTER HUMANITATEM",
+    "sessao": "3ª FEIRA - 19:30H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "CÓRREGO INDAYSSU S/N, , ZONA RURAL - CEP 36976-000.",
+    "cidade": "ALTO JEQUITIBÁ / MG"
+  },
+  {
+    "numero": "985",
+    "nome": "GONÇALVES LÊDO",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA JAGUARÃO , 260, BONFIM - CEP 31210-240.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "993",
+    "nome": "ESPERANÇA NO ARQUITETO",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DR. GERALDO GROSSI, 200, 200, CENTRO - CEP 35350-000.",
+    "cidade": "RAUL SOARES / MG"
+  },
+  {
+    "numero": "1000",
+    "nome": "UNIÃO E HUMANIDADE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA SÃO JOSÉ , 327, CENTRO - CEP 37002-130.",
+    "cidade": "VARGINHA / MG"
+  },
+  {
+    "numero": "1009",
+    "nome": "LUZ E HUMANIDADE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV PRESIDENTE VARGAS, 1589, CENTRO - CEP 38740-032.",
+    "cidade": "PATROCÍNIO / MG"
+  },
+  {
+    "numero": "1063",
+    "nome": "OTÁVIO KELLY",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ITAMBÉ, 73, FLORESTA - CEP 30150-150.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "1064",
+    "nome": "UNIÃO MUTUENSE 17 DE MAIO",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA OLEGÁRIO MACIEL , 189, CENTRO - CEP 36955-000.",
+    "cidade": "MUTUM / MG"
+  },
+  {
+    "numero": "1065",
+    "nome": "MESTRES DO VALE",
+    "sessao": "5ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA BARBARA HELIODORA, 1090, CENTRO - CEP 35010-040.",
+    "cidade": "GOVERNADOR VALADARES / MG"
+  },
+  {
+    "numero": "1093",
+    "nome": "FRATERNIDADE SUL MINEIRA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA CORONEL RIBEIRO DE ABREU, 79, CENTRO - CEP 37550-000.",
+    "cidade": "POUSO ALEGRE / MG"
+  },
+  {
+    "numero": "1105",
+    "nome": "REDENÇÃO SUL MINEIRA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA 13 DE MAIO, 129, 129, CENTRO - CEP 37800-000.",
+    "cidade": "GUAXUPÉ / MG"
+  },
+  {
+    "numero": "1143",
+    "nome": "OBREIROS DO TRABALHO",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA FELICIANO FERRAZ, 359, CENTRO - CEP 35240-021.",
+    "cidade": "CONSELHEIRO PENA / MG"
+  },
+  {
+    "numero": "1152",
+    "nome": "JUSTIÇA E CARIDADE",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PRAÇA JOÃO PESSOA, 63, CENTRO - CEP 37890-000.",
+    "cidade": "MUZAMBINHO / MG"
+  },
+  {
+    "numero": "1161",
+    "nome": "FRATERNIDADE PIRAPORENSE",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ANTÔNIO NASCIMENTO, 371, CENTRO - CEP 39270-082.",
+    "cidade": "PIRAPORA / MG"
+  },
+  {
+    "numero": "1163",
+    "nome": "DEUS, UNIVERSO E VIRTUDE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SETE DE SETEMBRO, 165, CENTRO - CEP 37900-015.",
+    "cidade": "PASSOS / MG"
+  },
+  {
+    "numero": "1180",
+    "nome": "LIBERTAS QUAE SERA TAMEN",
+    "sessao": "5ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA TIRADENTES, 80, 80, CENTRO - CEP 36950-000.",
+    "cidade": "IPANEMA / MG"
+  },
+  {
+    "numero": "1184",
+    "nome": "PAZ E PROGRESSO",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ISRAEL PINHEIRO, 3142, CENTRO - CEP 35010-130.",
+    "cidade": "GOVERNADOR VALADARES / MG"
+  },
+  {
+    "numero": "1185",
+    "nome": "FRATERNIDADE E VIRTUDE",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA COMENDADOR VIDIGAL, 219, 219, CENTRO - CEP 36840-000.",
+    "cidade": "TOMBOS / MG"
+  },
+  {
+    "numero": "1200",
+    "nome": "JESUS, O MEIGO NAZARENO",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ROZENDO APRIGIO DE RESENDE, 71 , 71, CENTRO - CEP 37860-000.",
+    "cidade": "NOVA RESENDE / MG"
+  },
+  {
+    "numero": "1202",
+    "nome": "RESPLENDOR UNIDO",
+    "sessao": "5ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MORAIS CARVALHO, 667, CENTRO - CEP 35230-000.",
+    "cidade": "RESPLENDOR / MG"
+  },
+  {
+    "numero": "1204",
+    "nome": "TIRADENTES",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA TIRADENTES , 1, CENTRO - CEP 37270-000.",
+    "cidade": "CAMPO BELO / MG"
+  },
+  {
+    "numero": "1217",
+    "nome": "RENÚNCIA E PUREZA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "ESTRADA CÓRREGO INDAIAÇU - S/N, , ZONA RUAL - CEP 35767-000.",
+    "cidade": "ALTO JEQUITIBÁ / MG"
+  },
+  {
+    "numero": "1218",
+    "nome": "PRESIDENTE ROOSEVELT II",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DR. ANTÔNIO FARIA, 89, CENTRO - CEP 39970-000.",
+    "cidade": "PEDRA AZUL / MG"
+  },
+  {
+    "numero": "1296",
+    "nome": "FRATERNIDADE PRUDÊNCIA E LUZ",
+    "sessao": "6ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ROQUE FERREIRA DE CASTRO, 155, CENTRO - CEP 36830-000.",
+    "cidade": "ESPERA FELIZ / MG"
+  },
+  {
+    "numero": "1327",
+    "nome": "UNIÃO E AMOR",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV BENEVIDES DE FARIA, 104, CENTRO - CEP 38390-000.",
+    "cidade": "CENTRALINA / MG"
+  },
+  {
+    "numero": "1336",
+    "nome": "ESTRELA ITUIUTABANA",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA TRINTA, 740, CENTRO - CEP 38300-084.",
+    "cidade": "ITUIUTABA / MG"
+  },
+  {
+    "numero": "1345",
+    "nome": "AÇÃO E TRABALHO",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA GETÚLIO VARGAS, 22, CENTRO - CEP 38480-000.",
+    "cidade": "TUPACIGUARA / MG"
+  },
+  {
+    "numero": "1370",
+    "nome": "BENEFICENTE DE SÃO LOURENÇO",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ANTONIO JUNQUEIRA DE SOUZA, 54, CENTRO - CEP 37470-000.",
+    "cidade": "SÃO LOURENÇO / MG"
+  },
+  {
+    "numero": "1376",
+    "nome": "ARTE E VIRTUDE",
+    "sessao": "5ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. DR. RUBENS BOECHAT DE OLIVEIRA, 555, CENTRO - CEP 36980-000.",
+    "cidade": "LAJINHA / MG"
+  },
+  {
+    "numero": "1394",
+    "nome": "SABEDORIA E AMOR",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA OITO, 706, CENTRO - CEP 38380-000.",
+    "cidade": "CANÁPOLIS / MG"
+  },
+  {
+    "numero": "1398",
+    "nome": "LUZ E CARIDADE",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA CABO LEONICIO, 87, CENTRO - CEP 35290-039.",
+    "cidade": "MANTENA / MG"
+  },
+  {
+    "numero": "1400",
+    "nome": "LIBERDADE E FRATERNIDADE III",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA VEREADOR ANTONIO R. TRAVASSOS, 33, CENTRO - CEP 36947-000.",
+    "cidade": "CONCEIÇÃO DE IPANEMA / MG"
+  },
+  {
+    "numero": "1414",
+    "nome": "HIRAM",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JAGUARI, 373, BONFIM - CEP 31210-430.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "1452",
+    "nome": "27 DE ABRIL",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA CORONEL OLIVER FARJADO, 260, CENTRO - CEP 36700-024.",
+    "cidade": "LEOPOLDINA / MG"
+  },
+  {
+    "numero": "1459",
+    "nome": "JUSTIÇA E VERDADE",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA CENTO E CINCO, 320, CENTRO - CEP 38360-000.",
+    "cidade": "CAPINÓPOLIS / MG"
+  },
+  {
+    "numero": "1466",
+    "nome": "FRATERNIDADE ITAJUBENSE",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ALCIDES FARIA, 33, VARGINHA - CEP 37501-058.",
+    "cidade": "ITAJUBÁ / MG"
+  },
+  {
+    "numero": "1511",
+    "nome": "FRANK SHERMAN LAND",
+    "sessao": "1º E 3º SÁBADO - 9H",
+    "rito": "RITO DE YORK",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "1525",
+    "nome": "14 DE JULHO",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "1527",
+    "nome": "CARIDADE E JUSTIÇA",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV VINTE E SETE, 754, CENTRO - CEP 38270-000.",
+    "cidade": "CAMPINA VERDE / MG"
+  },
+  {
+    "numero": "1529",
+    "nome": "ESTRELA DO MUCURI",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JUIZ DE FORA , 532, CENTRO - CEP 39860-000.",
+    "cidade": "NANUQUE / MG"
+  },
+  {
+    "numero": "1557",
+    "nome": "CARIDADE E JUSTIÇA",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ITAMBÉ, 73, FLORESTA - CEP 30150-150.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "1561",
+    "nome": "REI SALOMÃO",
+    "sessao": "2ª E 4ª TERÇA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "1562",
+    "nome": "UNIÃO, DEUS E FRATERNIDADE REI SALOMÃO",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA GUARDA-MOR ALKIMIM, 44, CENTRO - CEP 39410-000.",
+    "cidade": "BOCAIÚVA / MG"
+  },
+  {
+    "numero": "1564",
+    "nome": "LUZ DO PRATA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA CICENTE SALES PERDIGÃO, 12, CENTRO - CEP 35995-000.",
+    "cidade": "SÃO DOMINGOS DO PRATA / MG"
+  },
+  {
+    "numero": "1567",
+    "nome": "UNIÃO DE IPATINGA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DIAMANTINA, 143, CENTRO - CEP 35160-019.",
+    "cidade": "IPATINGA / MG"
+  },
+  {
+    "numero": "1580",
+    "nome": "TORRE DE VIGIA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PRAÇA PADRE JOÃO DE PAULA, 58, CENTRO - CEP 39900-000.",
+    "cidade": "ALMENARA / MG"
+  },
+  {
+    "numero": "1583",
+    "nome": "SETE DE SETEMBRO BARÃO DE MAUÁ",
+    "sessao": "SÁBADO - 09H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. BARBACENA, 85, BARRO PRETO - CEP 30190-130.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "1625",
+    "nome": "HARMONIA",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA OLGA DEMÉTRIA, 659, MANGABEIRA - CEP 35930-196.",
+    "cidade": "JOÃO MONLEVADE / MG"
+  },
+  {
+    "numero": "1629",
+    "nome": "GENERAL MOREIRA SAMPAIO",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA PEDRO LESSA, 801, SANTO ANDRÉ - CEP 31210-580.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "1691",
+    "nome": "ACÁCIA DO PARAIBUNA",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA ACÁCIA DO PARAIBUNA, 94, MANSÕES BOM PASTOR - CEP 36021-720.",
+    "cidade": "JUIZ DE FORA / MG"
+  },
+  {
+    "numero": "1696",
+    "nome": "ESTRELA CAMBUIENSE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SILVIANO BRANDÃO, 218, JARDIM SÃO BENEDITO - CEP 37600-000.",
+    "cidade": "CAMBUÍ / MG"
+  },
+  {
+    "numero": "1732",
+    "nome": "ESTRELA DA GALILÉIA",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ARY MACHADO, 728, CENTRO - CEP 35250-000.",
+    "cidade": "GALILÉIA / MG"
+  },
+  {
+    "numero": "1740",
+    "nome": "ESTRELA DO VALE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA TURMALINA, 204, MAJOR LAGE DE CIMA - CEP 35900-395.",
+    "cidade": "ITABIRA / MG"
+  },
+  {
+    "numero": "1753",
+    "nome": "ACADEMUS",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PRESIDENTE ROOSEVELT, 151, CENTRO - CEP 37170-000.",
+    "cidade": "BOA ESPERANÇA / MG"
+  },
+  {
+    "numero": "1781",
+    "nome": "UNIÃO, PAZ E JUSTIÇA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA GENTIL DIAS, 430, SANTA MARIA - CEP 39401-076.",
+    "cidade": "MONTES CLAROS / MG"
+  },
+  {
+    "numero": "1782",
+    "nome": "AUSTERIDADE E JUSTIÇA",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOÃO XXIII, 269, CENTRO - CEP 35700-000.",
+    "cidade": "SETE LAGOAS / MG"
+  },
+  {
+    "numero": "1795",
+    "nome": "DEUS, PAZ E LIBERDADE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA SANTA MÔNICA, 555, CENTRO - CEP 39440-000.",
+    "cidade": "JANAÚBA / MG"
+  },
+  {
+    "numero": "1807",
+    "nome": "VIGILANTES DO OESTE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA FORMIGA, 358, CENTRO - CEP 35600-262.",
+    "cidade": "ARCOS / MG"
+  },
+  {
+    "numero": "1808",
+    "nome": "ACÁCIA VIÇOSENSE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DOUTOR JOAQUIM FERNANDES BRAGA, 80, LOURDES - CEP 36572-030.",
+    "cidade": "VIÇOSA / MG"
+  },
+  {
+    "numero": "1830",
+    "nome": "AMIGOS DO MESTRE",
+    "sessao": "ÚLTIMA 6ª FEIRA - 19:30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MARQUÊS DE POMBAL, 143, CENTRO - CEP 35260-000.",
+    "cidade": "CENTRAL DE MINAS / MG"
+  },
+  {
+    "numero": "1832",
+    "nome": "OBREIROS DE CARATINGA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA MARIA CATARINA CIMIN, 114, CENTRO - CEP 35300-030.",
+    "cidade": "CARATINGA / MG"
+  },
+  {
+    "numero": "1839",
+    "nome": "TRABALHO E JUSTIÇA",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA HUMBERTO MACHADO, 123, MANGABEIRAS - CEP 38550-000.",
+    "cidade": "COROMANDEL / MG"
+  },
+  {
+    "numero": "1881",
+    "nome": "SOLIDÁRIOS DO RIO DOCE",
+    "sessao": "1ª E 3ª QUARTA-FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PRAÇA DA MAÇONARIA, 36, ILHA DOS ARAÚJOS - CEP 35020-240.",
+    "cidade": "GOVERNADOR VALADARES / MG"
+  },
+  {
+    "numero": "1890",
+    "nome": "OBREIROS DO VALE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SÃO PAULO, 82, VATICANO - CEP 39960-000.",
+    "cidade": "JEQUITINHONHA / MG"
+  },
+  {
+    "numero": "1902",
+    "nome": "MORAL E JUSTIÇA",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JACUÍ, 53, FLORESTA - CEP 31110-050.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "1905",
+    "nome": "BANDEIRANTES DO VALE",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA HAUY PETROCELI MAYRINK, 56, CENTRO - CEP 39780-000.",
+    "cidade": "SANTA MARIA DO SUAÇUÍ / MG"
+  },
+  {
+    "numero": "1924",
+    "nome": "ACÁCIA DO TRIÂNGULO",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA ASPIRANTE MEGA, 2640, DONA ZULMIRA - CEP 38414-064.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "1925",
+    "nome": "CONQUISTA DA LIBERDADE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA MONSENHOR CERQUEIRA, 32, CENTRO - CEP 35550-000.",
+    "cidade": "ITAPECERICA / MG"
+  },
+  {
+    "numero": "1926",
+    "nome": "UNIÃO, LIBERDADE E JUSTIÇA",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ANTÔNIO WELERSON, 751, SANTO ANTÔNIO - CEP 36900-133.",
+    "cidade": "MANHUAÇU / MG"
+  },
+  {
+    "numero": "1939",
+    "nome": "CLÁUDIO DAS NEVES",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA IZAÚ RANGEL MENDONÇA, 136, SANTA MÔNICA - CEP 38408-136.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "1956",
+    "nome": "MISSIONÁRIOS DA LUZ",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MARIUS DORNELAS , 37, BARRA - CEP 36884-085.",
+    "cidade": "MURIAÉ / MG"
+  },
+  {
+    "numero": "1962",
+    "nome": "ESTRELA DO ARAÇUAÍ",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA OSÓRIO COLARES, 248, ALTO MERCADO - CEP 39606-038.",
+    "cidade": "ARAÇUAÍ / MG"
+  },
+  {
+    "numero": "1965",
+    "nome": "FRATERNIDADE ETERNA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30190-130.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "1967",
+    "nome": "ACÁCIA DO VALE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA VER. CORINTO PEREIRA CASTRO, 188, CENTRO - CEP 39560-000.",
+    "cidade": "SALINAS / MG"
+  },
+  {
+    "numero": "1999",
+    "nome": "HARMONIA E JUSTIÇA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SERRA DO MAR, 790, JARDIM PANORAMA - CEP 35164-238.",
+    "cidade": "IPATINGA / MG"
+  },
+  {
+    "numero": "2005",
+    "nome": "LUZ E REDENÇÃO",
+    "sessao": "2ª E 4ª SEGUNDA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 31741-609.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "2057",
+    "nome": "LUZ, PAZ E UNIÃO",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ODILON PINHEIRO DA CRUZ, 357, SANTO ANTÔNIO - CEP 39527-000.",
+    "cidade": "MATO VERDE / MG"
+  },
+  {
+    "numero": "2061",
+    "nome": "HARMONIA E TRABALHO",
+    "sessao": "1ª E 3ª SEGUNDA-FEIRA 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JACUÍ, 53, FLORESTA - CEP 31110-063.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "2062",
+    "nome": "ACÁCIA DE BAMBUÍ",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ANACLETO JOSÉ SILVA Nº 105 , 105, SÃO CONRADO - CEP 38900-000.",
+    "cidade": "BAMBUÍ / MG"
+  },
+  {
+    "numero": "2067",
+    "nome": "ESTRELA DO JACINTO",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA ANTÔNIO LÚCIO Nº 450, 450, CENTRO - CEP 39930-000.",
+    "cidade": "JACINTO / MG"
+  },
+  {
+    "numero": "2100",
+    "nome": "ACÁCIA DO VALE DO URUCUIA",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PARANÁ Nº 510, 510, CENTRO - CEP 38660-000.",
+    "cidade": "BURITIS / MG"
+  },
+  {
+    "numero": "2101",
+    "nome": "ALFERES TIRADENTES",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA GILBERTO CECÍLIO CAMPOS Nº 30 , 30, VILA MARCHETTI - CEP 36307-212.",
+    "cidade": "SÃO JOÃO DEL REI / MG"
+  },
+  {
+    "numero": "2104",
+    "nome": "ESTRELA DO NORTE",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA JANETE CLAIR, 526, VILA REGINA - CEP 39400-563.",
+    "cidade": "MONTES CLAROS / MG"
+  },
+  {
+    "numero": "2114",
+    "nome": "VALE DO CANABRAVA",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA CHICO VIEIRA, 458, VILA MAGALHÃES - CEP 39340-000.",
+    "cidade": "CORAÇÃO DE JESUS / MG"
+  },
+  {
+    "numero": "2120",
+    "nome": "ESTRELA BETINENSE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA SEBASTIÃO DAYREL LIMA Nº 05 , 5, BRASILEIA - CEP 32600-265.",
+    "cidade": "BETIM / MG"
+  },
+  {
+    "numero": "2122",
+    "nome": "VERDADE, UNIÃO E VITÓRIA",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO,985, 11ºANDAR, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "2129",
+    "nome": "UNIÃO E TRABALHO",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA FLORIANO PEIXOTO, 6, CENTRO - CEP 39520-000.",
+    "cidade": "PORTEIRINHA / MG"
+  },
+  {
+    "numero": "2150",
+    "nome": "OBREIROS DOS TRÊS VALES",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MARCELO GUEDES, 349, CIDADE ALTA - CEP 39803-332.",
+    "cidade": "TEÓFILO OTONI / MG"
+  },
+  {
+    "numero": "2163",
+    "nome": "VIGILANTES DA PALESTINA",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA LERO GOMES, 84, CENTRO - CEP 39920-000.",
+    "cidade": "JORDÂNIA / MG"
+  },
+  {
+    "numero": "2165",
+    "nome": "OBREIROS DA PAZ",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA OTÁVIO DE OLIVEIRA ROSA, 766, CENTRO - CEP 39280-000.",
+    "cidade": "BURITIZEIRO / MG"
+  },
+  {
+    "numero": "2184",
+    "nome": "UNIÃO DE SIMONÉSIA",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. ARIOSTO ALVES PORFIRIO, 40, CENTRO - CEP 36930-000.",
+    "cidade": "SIMONÉSIA / MG"
+  },
+  {
+    "numero": "2185",
+    "nome": "FRATERNIDADE CARMELITANA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA RONDON PACHECO, 645, SANTO ANTONIO - CEP 37150-000.",
+    "cidade": "CARMO DO RIO CLARO / MG"
+  },
+  {
+    "numero": "2187",
+    "nome": "AMOR E FRATERNIDADE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. MUCURI,, 1643, CENTRO - CEP 39860-000.",
+    "cidade": "NANUQUE / MG"
+  },
+  {
+    "numero": "2229",
+    "nome": "ACÁCIA DE ACESITA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA NOVENTA E CINCO, 371, JOÃO XXIII - CEP 35180-368.",
+    "cidade": "TIMÓTEO / MG"
+  },
+  {
+    "numero": "2230",
+    "nome": "FRATERNIDADE FERRENSE",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DAS ACÁCIAS, 120, MORADA DO IPÊ - CEP 35360-000.",
+    "cidade": "SÃO PEDRO DOS FERROS / MG"
+  },
+  {
+    "numero": "2241",
+    "nome": "UNIÃO, IGUALDADE E JUSTIÇA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SAFIRA, 4, PROGRESSO - CEP 35720-000.",
+    "cidade": "MATOZINHOS / MG"
+  },
+  {
+    "numero": "2246",
+    "nome": "TRÍPLICE ALIANÇA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. DR. JORGE HANNAS S/N , , ALAMEDA DAS ACÁCIAS - CEP 36906-360.",
+    "cidade": "MANHUAÇU / MG"
+  },
+  {
+    "numero": "2249",
+    "nome": "FÊNIX",
+    "sessao": "1ª E 3ª SEGUNDA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ITAMBÉ, 73, FLORESTA - CEP 30150-150.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "2259",
+    "nome": "PAZ E LIBERDADE MATIPÓ",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA AUGUSTO DE BERTOLDINO MAGALHÃES , 127, EXPOSIÇÃO - CEP 35367-000.",
+    "cidade": "MATIPÓ / MG"
+  },
+  {
+    "numero": "2267",
+    "nome": "LEGADO DE SALOMÃO",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA UNIÃO DE CONTAGEM, 112, INCONFIDENTES - CEP 32260-230.",
+    "cidade": "CONTAGEM / MG"
+  },
+  {
+    "numero": "2269",
+    "nome": "DILSON VIEIRA DA FONSECA",
+    "sessao": "1ª E 3ª SEGUNDA-FEIRA 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA PEDRO LESSA, 801, SANTO ANDRÉ - CEP 31210-380.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "2271",
+    "nome": "TAKEO IWACE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA SOUZA COSTA , 159, MARACANÃ - CEP 38400-232.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "2307",
+    "nome": "ACÁCIA VARZEAPALMENSE",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA REINALDO RODRIGUES DOS SANTOS, 330, PLANALTO - CEP 39260-000.",
+    "cidade": "VÁRZEA DA PALMA / MG"
+  },
+  {
+    "numero": "2324",
+    "nome": "VINTE E CINCO DE AGOSTO",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JACUÍ, 53, COLÉGIO BATISTA - CEP 31110-063.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "2326",
+    "nome": "TORRE DO MÉDIO JEQUITINHONHA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ANTÔNIO CACIQUE, 281, ALIANÇA - CEP 39620-000.",
+    "cidade": "MEDINA / MG"
+  },
+  {
+    "numero": "2328",
+    "nome": "ESTRELA DE BELÉM",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PRAÇA FREI INOCÊNCIO Nº 01, 1, CENTRO - CEP 35270-000.",
+    "cidade": "MENDES PIMENTEL / MG"
+  },
+  {
+    "numero": "2332",
+    "nome": "VITAL BRAZIL",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA GERALDO MAIA DA SILVA, 105, XORORÓ - CEP 37400-000.",
+    "cidade": "CAMPANHA / MG"
+  },
+  {
+    "numero": "2346",
+    "nome": "SALGADO FILHO",
+    "sessao": "2ª, 3ª E 4ª, TERÇA-FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA UNIÃO DE CONTAGEM, 112, INCONFIDENTES - CEP 32260-230.",
+    "cidade": "CONTAGEM / MG"
+  },
+  {
+    "numero": "2357",
+    "nome": "SOLIDÁRIOS DA LIBERDADE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA LEVINDO SILVA S/N, , BELA VISTA - CEP 36580-000.",
+    "cidade": "TEIXEIRAS / MG"
+  },
+  {
+    "numero": "2358",
+    "nome": "ESPERANÇA E UNIÃO",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DR. MARINO COTTA M. TEIXEIRA, 79, CENTRO - CEP 35370-000.",
+    "cidade": "RIO CASCA / MG"
+  },
+  {
+    "numero": "2364",
+    "nome": "CONFIDENTES DO VALE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ARISTÍDES MENDES LINS Nº 88, 88, CENTRO - CEP 35430-114.",
+    "cidade": "PONTE NOVA / MG"
+  },
+  {
+    "numero": "2366",
+    "nome": "VERDADEIRA AMIZADE",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA AUGUSTO DE OLIVEIRA LAMEIRA FILHO, 70, MORRO DOS CABRITOS - CEP 36660-000.",
+    "cidade": "ALÉM PARAÍBA / MG"
+  },
+  {
+    "numero": "2370",
+    "nome": "INCONFIDÊNCIA E LIBERDADE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. TIRADENTES, 303, INCONFIDENTES - CEP 37490-000.",
+    "cidade": "SÃO GONÇALO DO SAPUCAÍ / MG"
+  },
+  {
+    "numero": "2372",
+    "nome": "DEUS, JUSTIÇA E CARIDADE",
+    "sessao": "1ª E 3ª SEGUNDA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "2376",
+    "nome": "AGOSTINHO DE SOUZA LIMA",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA MUNICIPAL DESEMBARGADOR MARCIO MARINS, S/N, , LOMBA - CEP 36974-000.",
+    "cidade": "DURANDÉ / MG"
+  },
+  {
+    "numero": "2392",
+    "nome": "ACÁCIA IBIAENSE",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MANOEL ALVES DA SILVA , 212, SANTA CRUZ - CEP 38950-000.",
+    "cidade": "IBIÁ / MG"
+  },
+  {
+    "numero": "2412",
+    "nome": "APÓSTOLOS DA GALILEIA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MAJOR ALEXANDRE RODRIGUES , 341, IBITURUNA - CEP 39401-301.",
+    "cidade": "MONTES CLAROS / MG"
+  },
+  {
+    "numero": "2415",
+    "nome": "ACÁCIA DE JERUSALÉM",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "PARQUE SERRA VERDERUA LUIZ GONZAGA FIGUEIREDO, 135, CENTRO - CEP 36071-210.",
+    "cidade": "JUIZ DE FORA / MG"
+  },
+  {
+    "numero": "2418",
+    "nome": "VERITAS VINCIT",
+    "sessao": "4ª FEIRA - 19H30",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA JANUÁRIO DE SOUZA ROCHA , 245, BELVEDERE - CEP 35501-320.",
+    "cidade": "DIVINÓPOLIS / MG"
+  },
+  {
+    "numero": "2426",
+    "nome": "OBREIROS DE SÃO JOÃO",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MAJOR JOÃO GUALBERTO, 123, CENTRO - CEP 35340-000.",
+    "cidade": "BOM JESUS DO GALHO / MG"
+  },
+  {
+    "numero": "2433",
+    "nome": "MESTRE JOSÉ ARAÚJO",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MAGNÓLIA Nº 555, 555, FLORES - CEP 38749-000.",
+    "cidade": "SERRA DO SALITRE / MG"
+  },
+  {
+    "numero": "2446",
+    "nome": "DEUS, JUSTIÇA E UNIÃO",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA ILVO MARANI, 72, JARDIM ITAÚ - CEP 33200-530.",
+    "cidade": "VESPASIANO / MG"
+  },
+  {
+    "numero": "2454",
+    "nome": "SABEDORIA, ESTABILIDADE E PODER",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SENHORA DAS MERCÊS, 15, GRAÇA - CEP 31140-080.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "2455",
+    "nome": "ESTRELA DE AUGUSTO DE LIMA",
+    "sessao": "1ª E 3ª TERÇAS-FEIRAS - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA DR. GENTIL CAETANO, 170, SANTA HELENA - CEP 39220-000.",
+    "cidade": "AUGUSTO DE LIMA / MG"
+  },
+  {
+    "numero": "2458",
+    "nome": "OBREIROS DE ADONHIRAM",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "AV MAJOR ALEXANDRO RODRIGUES, 361, IBITURUNA - CEP 39401-301.",
+    "cidade": "MONTES CLAROS / MG"
+  },
+  {
+    "numero": "2469",
+    "nome": "FRATERNIDADE REGIONAL 33",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA LAFAYETTE VASCONCELOS SABIDO, 22, CENTRO - CEP 36900-000.",
+    "cidade": "MANHUAÇU / MG"
+  },
+  {
+    "numero": "2476",
+    "nome": "FRATERNIDADE CAIANENSE",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOÃO FERREIRA Nº 226, 226, CENTRO - CEP 36832-000.",
+    "cidade": "CAIANA / MG"
+  },
+  {
+    "numero": "2479",
+    "nome": "VIGILANTES DO ARAXÁ",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ANDRÉ AVELINO DA COSTA NUNES, 33, ARASOL - CEP 38183-306.",
+    "cidade": "ARAXÁ / MG"
+  },
+  {
+    "numero": "2511",
+    "nome": "TIMONEIRA DO SUL DE MINAS",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PRAÇA DA MAÇONARIA, 7, APARECIDA - CEP 37701-127.",
+    "cidade": "POÇOS DE CALDAS / MG"
+  },
+  {
+    "numero": "2512",
+    "nome": "ESTRELA DA DAMASCO",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA FAUSTO SALOMÃO TREZZI, 74, CONJUNTO CÁSSIO REZENDE - CEP 38080-240.",
+    "cidade": "UBERABA / MG"
+  },
+  {
+    "numero": "2515",
+    "nome": "PROFESSOR ARMANDO RIGHETTO",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ALPINÓPOLIS, 375, CANJERANUS - CEP 37900-528.",
+    "cidade": "PASSOS / MG"
+  },
+  {
+    "numero": "2517",
+    "nome": "ARAUTOS DA PAZ",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ISAAC SIMÃO, 333, CENTRO - CEP 37730-000.",
+    "cidade": "CAMPESTRE / MG"
+  },
+  {
+    "numero": "2521",
+    "nome": "MANCHESTER MINEIRA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA HUMBERTO LUIGI LOUVISIS, 41 , 41, VIVENDAS DA SERRA - CEP 36047-240.",
+    "cidade": "JUIZ DE FORA / MG"
+  },
+  {
+    "numero": "2523",
+    "nome": "TOMÁS ANTÔNIO GONZAGA",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "2528",
+    "nome": "NOVOS INCONFIDENTES",
+    "sessao": "2ª E 4ª TERÇA-FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA LUIZ GONZAGA FIGUEIREDO, 135, PQ. SERRA VERDE - CEP 36071-210.",
+    "cidade": "JUIZ DE FORA / MG"
+  },
+  {
+    "numero": "2536",
+    "nome": "ANTÔNIO BATISTA",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA GOIÁS, 592, ROSÁRIO - CEP 35540-000.",
+    "cidade": "OLIVEIRA / MG"
+  },
+  {
+    "numero": "2547",
+    "nome": "FRATERNIDADE E ESPERANÇA DE LAMBARI",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA BENEDITO DÁRIO DA FÉ, 159, CENTRO - CEP 37480-000.",
+    "cidade": "LAMBARI / MG"
+  },
+  {
+    "numero": "2552",
+    "nome": "FÊNIX DO ALTO PARANAÍBA",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MARIA BORGES SILVA, 473, ABNER AFONSO - CEP 38702-122.",
+    "cidade": "PATOS DE MINAS / MG"
+  },
+  {
+    "numero": "2555",
+    "nome": "ONOFRE DE CASTRO NEVES",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DR. JUAREZ QUINTÃO HOSKEN, 333, CHEVRANDO - CEP 36800-000.",
+    "cidade": "CARANGOLA / MG"
+  },
+  {
+    "numero": "2565",
+    "nome": "INCONFIDENTES MINEIROS",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ROSA AMÉLIA DE ANDRADE , 36, SÃO LUCAS - CEP 35490-000.",
+    "cidade": "ENTRE RIOS DE MINAS / MG"
+  },
+  {
+    "numero": "2570",
+    "nome": "FRATERNIDADE ACADÊMICA ESTRELA DE ADONHIRAM",
+    "sessao": "SÁBADO - 10H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA ALMIR RODRIGUES CHAVES, 526, VILA REGINA - CEP 39400-519.",
+    "cidade": "MONTES CLAROS / MG"
+  },
+  {
+    "numero": "2573",
+    "nome": "OBREIROS DA CARIDADE",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA ASPIRANTE MEGA, 2640, JARAGUÁ - CEP 38414-051.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "2576",
+    "nome": "LIBERDADE E FRATERNIDADE PRADENSE",
+    "sessao": "4ª FEIRA - 19:30H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ANTÔNIO CAPISTRANO PEREIRA, 89, PINHEIRO CHAGAS - CEP 36320-000.",
+    "cidade": "PRADOS / MG"
+  },
+  {
+    "numero": "2581",
+    "nome": "NOVA LUZ GUARDAMORENSE",
+    "sessao": "1ª E 3ª QUARTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ARAGUARI, 607, ATALAIA - CEP 38570-000.",
+    "cidade": "GUARDA-MOR / MG"
+  },
+  {
+    "numero": "2583",
+    "nome": "COLUNA DO RIO PARANAÍBA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA FRANCISCO DE PAULA MOURA NETO, 333, SÃO FRANCISCO - CEP 38810-000.",
+    "cidade": "RIO PARANAÍBA / MG"
+  },
+  {
+    "numero": "2596",
+    "nome": "VIGILANTES DO PILAR",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ANTÔNIO LEMOS, 234, CENTRO - CEP 35650-000.",
+    "cidade": "PITANGUI / MG"
+  },
+  {
+    "numero": "2600",
+    "nome": "UMBRAL DAS VERTENTES",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOÃO SIQUEIRA AFONSO, 33, PARQUE DOS BANDEIRANTES - CEP 36325-000.",
+    "cidade": "TIRADENTES / MG"
+  },
+  {
+    "numero": "2614",
+    "nome": "AREÓPAGO 20 DE AGOSTO",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MONSENHOR PEREIRA Nº 366, 366, CENTRO - CEP 37968-000.",
+    "cidade": "MONTE SANTO DE MINAS / MG"
+  },
+  {
+    "numero": "2627",
+    "nome": "TRABALHO E JUSTIÇA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA JURANDIR MENDES, 370, REPRESA - CEP 35730-000.",
+    "cidade": "CAPIM BRANCO / MG"
+  },
+  {
+    "numero": "2641",
+    "nome": "WALTAIR SABINO",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA MARIA DE SOUZA PAULA, 35, PARQUE DOS JARAGUAS - CEP 36720-000.",
+    "cidade": "VOLTA GRANDE / MG"
+  },
+  {
+    "numero": "2672",
+    "nome": "IGUALDADE, JUSTIÇA E TRABALHO",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA ANTERO LANZA, 113, DANTE LANZA - CEP 35701-486.",
+    "cidade": "SETE LAGOAS / MG"
+  },
+  {
+    "numero": "2674",
+    "nome": "MENSAGEIROS DA LIBERDADE",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ITAMBÉ, 73, FLORESTA - CEP 30150-150.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "2677",
+    "nome": "LIVRES PENSADORES",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA BENJAMIM CONSTANT, 726, CENTRO - CEP 37130-001.",
+    "cidade": "ALFENAS / MG"
+  },
+  {
+    "numero": "2679",
+    "nome": "NASCENTES DE PUREZA",
+    "sessao": "6ª FEIRA - 19H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SANTOS ALVES MAGALHÃES, 731, 731, CENTRO - CEP 39859-000.",
+    "cidade": "FELISBURGO / MG"
+  },
+  {
+    "numero": "2692",
+    "nome": "ARQUITETOS TEMPLÁRIOS DE CAETÉ",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA BEATRIZ RODRIGUES DA SILVA, 2, AMERICANO - CEP 34800-000.",
+    "cidade": "CAETÉ / MG"
+  },
+  {
+    "numero": "2715",
+    "nome": "VIGILANTES DA ORDEM",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA ASPIRANTE MEGA, 2640, DONA ZULMIRA - CEP 38414-064.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "2730",
+    "nome": "CRISTAL DO ORIENTE",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. LUIZ BOALI PORTO SALMAN , 1330, IPIRANGA - CEP 39802-000.",
+    "cidade": "TEÓFILO OTONI / MG"
+  },
+  {
+    "numero": "2739",
+    "nome": "ACÁCIA DO CAMINHO NOVO",
+    "sessao": "1ª E 3ª TERÇA-FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "EST. DA INDÚSTRIA, KM-23, , FAZENDINHA DE SIMÃO PEREIRA - CEP 36123-000.",
+    "cidade": "SIMÃO PEREIRA / MG"
+  },
+  {
+    "numero": "2742",
+    "nome": "UNIÃO E FRATERNIDADE ITAUENSE",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOÃO CARLOS BOMFIM, 239, MARIA PARREIRA - CEP 37975-000.",
+    "cidade": "ITAÚ DE MINAS / MG"
+  },
+  {
+    "numero": "2748",
+    "nome": "FRATERNITATE ET JUSTITIA",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA ANTÔNIO LOURENÇO DA SILVA, 341, SERRA VERDE - CEP 36200-688.",
+    "cidade": "BARBACENA / MG"
+  },
+  {
+    "numero": "2763",
+    "nome": "ESPERANÇA, PAZ E LIBERDADE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DR. SERTÓRIO DE AMORIM E SILVA, 136, ABREU DIAS - CEP 35365-000.",
+    "cidade": "ABRE CAMPO / MG"
+  },
+  {
+    "numero": "2789",
+    "nome": "O CAMINHO DOS INCONFIDENTES",
+    "sessao": "1ª, 2ª E 3ª QUINTA-FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA DAS SEMPRE VIVAS, 51, MATOZINHOS - CEP 35455-143.",
+    "cidade": "ITABIRITO / MG"
+  },
+  {
+    "numero": "2832",
+    "nome": "INTELIGÊNCIA E SEGREDO",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA AMARILIS, 73, SANTO ANDRÉ - CEP 31230-190.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "2853",
+    "nome": "ACÁCIA ARINENSE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA FRANCISCO PEREIRA, 1700, CENTRO - CEP 38680-000.",
+    "cidade": "ARINOS / MG"
+  },
+  {
+    "numero": "2855",
+    "nome": "VALE DAS ACÁCIAS",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MARIA GOMES MOTA , 90, SANTA CRUZ I - CEP 38770-000.",
+    "cidade": "JOÃO PINHEIRO / MG"
+  },
+  {
+    "numero": "2880",
+    "nome": "FRATERNIDADE WALTER MIGUEL",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PRAÇA DA MAÇONARIA Nº 33, 33, CENTRO - CEP 37136-000.",
+    "cidade": "SERRANIA / MG"
+  },
+  {
+    "numero": "2885",
+    "nome": "DEFENSORES DA ORDEM",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "AV. PREF. JOÃO DAHER, 245, CENTRO - CEP 33400-000.",
+    "cidade": "LAGOA SANTA / MG"
+  },
+  {
+    "numero": "2899",
+    "nome": "ACÁCIA MONTEBELENSE",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOÃO RAFAEL, 65, CENTRO - CEP 37115-000.",
+    "cidade": "MONTE BELO / MG"
+  },
+  {
+    "numero": "2958",
+    "nome": "FRATERNIDADE UBERABENSE",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PRAÇA COMENDADOR QUINTINO , 272, ESTADOS UNIDOS - CEP 38015-410.",
+    "cidade": "UBERABA / MG"
+  },
+  {
+    "numero": "2979",
+    "nome": "ACÁCIA DO RIO SÃO FRANCISCO",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA 150, 100, BELA VISTA - CEP 38910-000.",
+    "cidade": "IGUATAMA / MG"
+  },
+  {
+    "numero": "2987",
+    "nome": "BERNARDINO DE CAMPOS JÚNIOR",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOSÉ FARIA DE CARVALHO, 333, RECANDO DOS BARREIROS - CEP 37552-459.",
+    "cidade": "POUSO ALEGRE / MG"
+  },
+  {
+    "numero": "3031",
+    "nome": "MENSAGEIROS DA PAZ",
+    "sessao": "6ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA THEODOSINO B. DOS SANTOS, 210, DOM BOSCO - CEP 35560-000.",
+    "cidade": "SANTO ANTÔNIO DO MONTE / MG"
+  },
+  {
+    "numero": "3042",
+    "nome": "ARISTIDES SEVERO DE OLIVEIRA",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ARILDO VILELA MOSCARDINI, 1100, CIDADE NOVA - CEP 37175-000.",
+    "cidade": "ILICÍNEA / MG"
+  },
+  {
+    "numero": "3062",
+    "nome": "RIO DAS PEDRAS",
+    "sessao": "1ª E 3ª TERÇA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA GOIÁS, 33, NOVO HORIZONTE - CEP 38460-000.",
+    "cidade": "CASCALHO RICO / MG"
+  },
+  {
+    "numero": "3072",
+    "nome": "MESTRE CHAUE CHEQUER",
+    "sessao": "4ª FEIRA - 19H30",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA DONA COTA , 1034, CENTRO - CEP 35680-033.",
+    "cidade": "ITAÚNA / MG"
+  },
+  {
+    "numero": "3080",
+    "nome": "CAVALEIROS DA INCONFIDÊNCIA",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "AV. CENTRAL, 308, GREENVILLE - CEP 36204-790.",
+    "cidade": "BARBACENA / MG"
+  },
+  {
+    "numero": "3121",
+    "nome": "UNIÃO DA SERRA",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOSÉ CUPERTINO CABRAL, 388, CENTRO - CEP 36540-000.",
+    "cidade": "SENADOR FIRMINO / MG"
+  },
+  {
+    "numero": "3199",
+    "nome": "UNIÃO E PAZ DE UBAPORANGA",
+    "sessao": "1ª E 3ª TERÇA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ARISTINO BRAZ, 15, CENTRO - CEP 35338-000.",
+    "cidade": "UBAPORANGA / MG"
+  },
+  {
+    "numero": "3216",
+    "nome": "FRATERNIDADE, CAMINHO E LUZ",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PRAÇA SÃO JOSÉ, 52, CENTRO - CEP 37950-000.",
+    "cidade": "SÃO SEBASTIÃO DO PARAÍSO / MG"
+  },
+  {
+    "numero": "3217",
+    "nome": "ACÁCIA DA CANASTRA",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SERVUS DEI DE FREITAS, 125, MARIA RODARTE - CEP 37928-000.",
+    "cidade": "SÃO ROQUE DE MINAS / MG"
+  },
+  {
+    "numero": "3227",
+    "nome": "VIGILANTES DE CONTAGEM",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA NENEN BICALHO, 65, ESTÂNCIAS DO HIBISCO - CEP 32017-640.",
+    "cidade": "CONTAGEM / MG"
+  },
+  {
+    "numero": "3232",
+    "nome": "OBREIROS DA ARTE REAL",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA BUENÓPOLIS, 403, CÉU AZUL - CEP 35790-653.",
+    "cidade": "CURVELO / MG"
+  },
+  {
+    "numero": "3240",
+    "nome": "UNIÃO E VERDADE",
+    "sessao": "4ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SADY SOARES MENDONÇA, 85, BEIRA RIO - CEP 36772-034.",
+    "cidade": "CATAGUASES / MG"
+  },
+  {
+    "numero": "3282",
+    "nome": "UNIÃO DE SANTA LUZIA",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PROF. MARIO PIRES, 229, ASTECA - CEP 33120-110.",
+    "cidade": "SANTA LUZIA / MG"
+  },
+  {
+    "numero": "3310",
+    "nome": "DEUS, UNIÃO E TRABALHO",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA GENTIL DIAS, 430, CÂNDIDA CÂMARA - CEP 39401-076.",
+    "cidade": "MONTES CLAROS / MG"
+  },
+  {
+    "numero": "3342",
+    "nome": "FRATERNIDADE ACADÊMICA VIGILANTES DA ORDEM",
+    "sessao": "2º E 4º SÁBADO - 18H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "AV. ASPIRANTE MEGA, 2640, DONA ZULMIRA - CEP 38414-064.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "3352",
+    "nome": "ACADÊMICA RAUL CÂNDIDO DO NASCIMENTO",
+    "sessao": "SÁBADO - 09H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. BARBACENA, 85, BARRO PRETO - CEP 30190-130.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "3364",
+    "nome": "VIGILANTES DO QUARTEL",
+    "sessao": "2º E 4º SÁBADO - 16H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA HIPÓLITO PINTO, 500, NOVO QUARTEL - CEP 35625-000.",
+    "cidade": "QUARTEL GERAL / MG"
+  },
+  {
+    "numero": "3373",
+    "nome": "FRATERNIDADE ACADÊMICA ALFENENSE",
+    "sessao": "1ª E 3ª, QUINTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA BENJAMIM CONSTANT , 790, PARQUE DAS NAÇÕES - CEP 37130-256.",
+    "cidade": "ALFENAS / MG"
+  },
+  {
+    "numero": "3378",
+    "nome": "FRATERNIDADE ACADADÊMICA IR. OTAÍDE FELTRIN",
+    "sessao": "1º E 4º SÁBADO - 08H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PROFESSOR LULU, 240, BELA VISTA - CEP 35574-219.",
+    "cidade": "FORMIGA / MG"
+  },
+  {
+    "numero": "3397",
+    "nome": "ORDEM E PROGRESSO",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DOS HIBISCOS, 138, JD. ELDORADO - CEP 38475-000.",
+    "cidade": "MONTE ALEGRE DE MINAS / MG"
+  },
+  {
+    "numero": "3400",
+    "nome": "PORTAL DO SAPUCAÍ",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. SAPUCAÍ, 349, BOA VISTA II - CEP 37540-000.",
+    "cidade": "SANTA RITA DO SAPUCAÍ / MG"
+  },
+  {
+    "numero": "3402",
+    "nome": "ALFA E ÔMEGA",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA DO FAZENDEIRO, 680, JARDIM DAS PALMEIRAS - CEP 38412-288.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "3407",
+    "nome": "ACÁCIA DOS PERDÕES",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA FRANCISCO TEODORO CARDOSO, 199, COHAB II - CEP 37260-000.",
+    "cidade": "PERDÕES / MG"
+  },
+  {
+    "numero": "3410",
+    "nome": "FRATERNIDADE AREADENSE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA OTÁVIO RODRIGUES DA SILVA, 162, CIDADE NOVA - CEP 37140-000.",
+    "cidade": "AREADO / MG"
+  },
+  {
+    "numero": "3411",
+    "nome": "VIGILANTES DO PARÁ",
+    "sessao": "QUINTA-FEIRA 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ESPÍRITO SANTO, 110, SÃO JOSÉ - CEP 35660-131.",
+    "cidade": "PARÁ DE MINAS / MG"
+  },
+  {
+    "numero": "3420",
+    "nome": "ESTRELA DA MANTIQUEIRA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ÁGUA FÉRREA, 709, CHÁCARA BRUNO ÁGUA FERREA - CEP 37660-000.",
+    "cidade": "PARAISÓPOLIS / MG"
+  },
+  {
+    "numero": "3430",
+    "nome": "MARCIUS DA ANUNCIAÇÃO DIAS",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA JANUÁRIO DE SOUZA ROCHA, 245, NOVO BELVERDERE - CEP 35501-320.",
+    "cidade": "DIVINÓPOLIS / MG"
+  },
+  {
+    "numero": "3442",
+    "nome": "PASSOS DA LIBERDADE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JUIZ DE FORA , 368, LAGOA DE TRÁS - CEP 37925-000.",
+    "cidade": "PIUMHI / MG"
+  },
+  {
+    "numero": "3448",
+    "nome": "LIBERDADE E JUSTIÇA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. RIO BRANCO, 1195, MANSÕES DO LAGO - CEP 38800-000.",
+    "cidade": "SÃO GOTARDO / MG"
+  },
+  {
+    "numero": "3452",
+    "nome": "FRATERNIDADE ACADADÊMICA GÊNESIS DO NORTE",
+    "sessao": "2º E 4º SÁBADO - 10H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. MAJOR ALEXANDRE RODRIGUES, 341, IBITURUNA - CEP 39401-301.",
+    "cidade": "MONTES CLAROS / MG"
+  },
+  {
+    "numero": "3469",
+    "nome": "UNIVERSITÁRIA ACÁCIA DO PARAIBUNA",
+    "sessao": "2º E 4º SÁBADO - 09H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA LUIZ GONZAGA DE FIGUEIREDO, 135, PARQUE SERRA VERDE - CEP 36071-210.",
+    "cidade": "JUIZ DE FORA / MG"
+  },
+  {
+    "numero": "3489",
+    "nome": "RENOVAÇÃO E SABEDORIA",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. PRES. TRANCREDO NEVES, 1040, IPANEMA - CEP 38796-509.",
+    "cidade": "PATOS DE MINAS / MG"
+  },
+  {
+    "numero": "3527",
+    "nome": "FRATERNIDADE SERTANEJA",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA NORITA, 222, DONA ZULMIRA - CEP 38414-018.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "3532",
+    "nome": "AURORA DE UNAÍ",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PARIS, 194, RIVIERA PARK - CEP 38610-481.",
+    "cidade": "UNAÍ / MG"
+  },
+  {
+    "numero": "3540",
+    "nome": "REAL FÊNIX",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. VEREADOR SERGIO BARBOSA, 89, CÓRREGO DA ILHA - CEP 34515-170.",
+    "cidade": "SABARÁ / MG"
+  },
+  {
+    "numero": "3556",
+    "nome": "FRATERNIDADE VARGINHENSE",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA BENEVENUTO BRAZ VIEIRA , 416, VILA ANDERE I - CEP 37004-630.",
+    "cidade": "VARGINHA / MG"
+  },
+  {
+    "numero": "3599",
+    "nome": "FRATERNIDADE AURORA DA PAZ",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PÇA. COMENDADOR FERREIRA DE MATOS, 12, CENTRO - CEP 35557-000.",
+    "cidade": "CONGONHAL / MG"
+  },
+  {
+    "numero": "3609",
+    "nome": "TRABALHO E FRATERNIDADE",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA BERENICE MARTINS DE OLIVEIRA, 390, VILA DIAMANTINA - CEP 37965-000.",
+    "cidade": "JACUÍ / MG"
+  },
+  {
+    "numero": "3630",
+    "nome": "JOÃO DA SILVEIRA BICALHO",
+    "sessao": "2º E 4º SÁBADO - 10H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SETE DE SETEMBRO, 600, SANTO AGOSTINHO - CEP 35600-000.",
+    "cidade": "BOM DESPACHO / MG"
+  },
+  {
+    "numero": "3640",
+    "nome": "FRATERNIDADE ACADÊMICA CARATINGA",
+    "sessao": "2º E 4º SÁBADO - 18H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA CORONEL PEDRO MARTINS, 225, CENTRO - CEP 35300-040.",
+    "cidade": "CARATINGA / MG"
+  },
+  {
+    "numero": "3660",
+    "nome": "FRATERNIDADE UNIVERSITÁRIA UBAENSE",
+    "sessao": "SÁBADOS",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "TRAVESSA ISAÍAS BARBOSA NAZARETH, 38, CENTRO - CEP 30160-041.",
+    "cidade": "UBÁ / MG"
+  },
+  {
+    "numero": "3661",
+    "nome": "ACADÊMICA UNIÃO UBERABENSE",
+    "sessao": "1º E 3º SÁBADO - 18H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "PÇA COMENDADOR QUINTINO, 272, ESTADOS UNIDOS - CEP 38015-410.",
+    "cidade": "UBERABA / MG"
+  },
+  {
+    "numero": "3668",
+    "nome": "INDEPENDÊNCIA DE TUPACIGUARA",
+    "sessao": "1ª E 3ª QUARTA - 19H30",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA JOSÉ BUENO DE AZEVEDO, 97, TIRADENTES - CEP 38480-000.",
+    "cidade": "TUPACIGUARA / MG"
+  },
+  {
+    "numero": "3694",
+    "nome": "CAMINHO DAS OLIVEIRAS",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA TREZE DE MAIO, 160, JARDIM DE SALUM - CEP 37940-000.",
+    "cidade": "ALPINÓPOLIS / MG"
+  },
+  {
+    "numero": "3695",
+    "nome": "ACADÊMICA CAMINHOS DE JACQUES DEMOLAY",
+    "sessao": "1ª E 3ª SÁBADO - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "AV. PRESIDENTE JUSCELINO KUBITSCHEK , 1161, PROGRESSO - CEP 38200-000.",
+    "cidade": "FRUTAL / MG"
+  },
+  {
+    "numero": "3703",
+    "nome": "FRATERNIDADE E UNIÃO",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "TRAV. MARECHAL RONDON, 6, CENTRO - CEP 37190-000.",
+    "cidade": "TRÊS PONTAS / MG"
+  },
+  {
+    "numero": "3744",
+    "nome": "FRATERNIDADE ERVALENSE",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOSÉ AUGUSTO, S/Nº , , BOM JARDIM , ZONA RURAL DE ERV - CEP 36555-000.",
+    "cidade": "ERVÁLIA / MG"
+  },
+  {
+    "numero": "3755",
+    "nome": "TEMPLÁRIOS DO RIO SÃO JOÃO",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA GEDEÃO DIAS RABELO, 21, SANTA QUITÉRIA - CEP 37948-000.",
+    "cidade": "BOM JESUS DA PENHA / MG"
+  },
+  {
+    "numero": "3773",
+    "nome": "ACADÊMICA REAL FÊNIX",
+    "sessao": "1ª E 3ª TERÇA-FEIRA - 20H",
+    "rito": "RITO DE YORK",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "3787",
+    "nome": "OBREIROS DA LUZ",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO SCHRÖDER",
+    "endereco": "AV. ASPIRANTE MEGA, 2640, DONA ZULMIRA - CEP 38414-051.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "3794",
+    "nome": "PHILANTROPIA E TRABALHO",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "PRAÇA FARID NADER, 79, CENTRO - CEP 38440-238.",
+    "cidade": "ARAGUARI / MG"
+  },
+  {
+    "numero": "3808",
+    "nome": "MONTEIRO LOBATO",
+    "sessao": "2ª E 4ª QUINTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA SEBASTIÃO DAYRELL DE LIMA, 5, BRASILÉIA - CEP 32600-014.",
+    "cidade": "BETIM / MG"
+  },
+  {
+    "numero": "3819",
+    "nome": "VIGILANTES DO DIVINO",
+    "sessao": "5ª FEIRA - 19H30",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA JANUÁRIO DE SOUZA ROCHA, 235, NOVO BELVEDERE - CEP 35501-320.",
+    "cidade": "DIVINÓPOLIS / MG"
+  },
+  {
+    "numero": "3825",
+    "nome": "OBREIROS DA JUSTIÇA",
+    "sessao": "1ª E 3ª QUINTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "3835",
+    "nome": "ACADÊMICA LIBERTAS HOMINI",
+    "sessao": "2ª SEGUNDA-FEIRA - 20H 4º SÁBADO - 09H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. DOM PEDRO II, 57, SÃO SEBASTIÃO - CEP 36400-000.",
+    "cidade": "CONSELHEIRO LAFAIETE / MG"
+  },
+  {
+    "numero": "3837",
+    "nome": "LIBERDADE E JUSTIÇA",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DO FAZENDEIRO, 680, JARDIM DAS PALMEIRAS - CEP 38400-978.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "3845",
+    "nome": "FÊNIX DO NOROESTE MINEIRO",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MANOEL CARLOS MOREIRA, 310, CENTRO - CEP 38755-000.",
+    "cidade": "LAGOA GRANDE / MG"
+  },
+  {
+    "numero": "3846",
+    "nome": "ACADÊMICA PROFESSOR ÁLVARO PALMEIRA",
+    "sessao": "SÁBADO - 10H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA PEDRO LESSA, 801, SANTO ANDRÉ - CEP 31210-580.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "3850",
+    "nome": "OBREIROS DA PAZ",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA VICTOR VECCHI, 220, GRANJA AURIMAR - CEP 36170-000.",
+    "cidade": "PIRAÚBA / MG"
+  },
+  {
+    "numero": "3865",
+    "nome": "ACÁCIA DE HIRAM",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "3868",
+    "nome": "FRATERNIDADE RIOVERDENSE",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA EQUADOR, 46, JARDIM AMÉRICA - CEP 37410-000.",
+    "cidade": "TRÊS CORAÇÕES / MG"
+  },
+  {
+    "numero": "3911",
+    "nome": "PORTAL DE MINAS",
+    "sessao": "1ª E 3ª QUINTA-FEIRA - 20H",
+    "rito": "RITO MODERNO",
+    "endereco": "RUA EXPEDICIONÁRIO DALBERTO CALDERARO, 15, AGENOR - CEP 37640-182.",
+    "cidade": "EXTREMA / MG"
+  },
+  {
+    "numero": "3922",
+    "nome": "CAVALEIROS DO SOL POENTE",
+    "sessao": "1ª E 3ª QUARTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30190-130.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "3923",
+    "nome": "SABEDORIA SANTANENSE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DOUTOR HOMERO BRASIL, 81, CENTRO - CEP 37560-000.",
+    "cidade": "SILVIANÓPOLIS / MG"
+  },
+  {
+    "numero": "3926",
+    "nome": "LUZ E FRATERNIDADE",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOÃO BATISTA PANSINI, 7, APARECIDA - CEP 37701-127.",
+    "cidade": "POÇOS DE CALDAS / MG"
+  },
+  {
+    "numero": "3947",
+    "nome": "CAVALEIROS DE VILLA RICA",
+    "sessao": "SÁBADO - 10H",
+    "rito": "RITO ESCOCÊS RETIFICADO",
+    "endereco": "RUA LUIZ FERREIRA CAMPOS, 752, JARDIM EUROPA - CEP 37012-412.",
+    "cidade": "VARGINHA / MG"
+  },
+  {
+    "numero": "3966",
+    "nome": "ACADÊMICA SABEDORIA E JUSTIÇA",
+    "sessao": "SÁBADO - 18H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA CARLOS CAMARGO , 256, CENTRO - CEP 38140-000.",
+    "cidade": "PRATA / MG"
+  },
+  {
+    "numero": "3987",
+    "nome": "ARS REGIA THERION",
+    "sessao": "1ª E 3ª QUINTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS RETIFICADO",
+    "endereco": "RUA RIO DE JANEIRO, 985, BELO HORIZONTE - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "3997",
+    "nome": "CAVALEIROS TEMPLÁRIOS",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO DE YORK",
+    "endereco": "RUA PEDRO LESSA, 801, SANTO ANDRÉ - CEP 31210-580.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "4000",
+    "nome": "ESSÊNIOS",
+    "sessao": "1ª E 3ª TERÇA-FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "4002",
+    "nome": "MESTRE MOACYR ALVES DE SANTANA",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JANUÁRIO DE SOUZA ROCHA, 245, BELVEDERE - CEP 35501-320.",
+    "cidade": "DIVINÓPOLIS / MG"
+  },
+  {
+    "numero": "4013",
+    "nome": "ACÁCIA DE TIMÓTEO",
+    "sessao": "TERÇA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA 95, 371, JOÃO XXIII - CEP 35180-368.",
+    "cidade": "TIMÓTEO / MG"
+  },
+  {
+    "numero": "4049",
+    "nome": "UNIÃO ACADÊMICA DO ALTO PARANAÍBA",
+    "sessao": "1º E 3º SÁBADO 15H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA ANDRÉ COSTA NUNES, 33, LEDA BARCELOS - CEP 38180398.",
+    "cidade": "ARAXÁ / MG"
+  },
+  {
+    "numero": "4051",
+    "nome": "COLUNAS DO JACURI",
+    "sessao": "2ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PADRE LUIS BARROSO, 30, CENTRO - CEP 39707-000.",
+    "cidade": "SÃO JOSÉ DO JACURI / MG"
+  },
+  {
+    "numero": "4059",
+    "nome": "MARCELO BOREM",
+    "sessao": "5ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "PÇ. ANTÔNIO BATISTA, 10, CENTRO - CEP 37177-000.",
+    "cidade": "GUAPÉ / MG"
+  },
+  {
+    "numero": "4075",
+    "nome": "FRATERNIDADE ACADÊMICA ANTÔNIO DE PÁDUA MORETTI",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA CORONEL RIBEIRO DE ABREU, 79, CENTRO - CEP 37550-000.",
+    "cidade": "POUSO ALEGRE / MG"
+  },
+  {
+    "numero": "4087",
+    "nome": "UNIÃO DOS INCONFIDENTES",
+    "sessao": "1ª E 3ª TERÇA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DR. JOÃO BELLINE BURZA , 61, CENTRO - CEP 37570-970.",
+    "cidade": "OURO FINO / MG"
+  },
+  {
+    "numero": "4111",
+    "nome": "FRANCISCO CÂNDIDO XAVIER",
+    "sessao": "1ª E 3ª QUARTA-FEIRA - 19:30H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. JURANDIR MENDES, 370, REPRESA - CEP 35730-000.",
+    "cidade": "CAPIM BRANCO / MG"
+  },
+  {
+    "numero": "4121",
+    "nome": "LUZ DO TRIÂNGULO",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DO FAZENDEIRO, 680, JARDIM DA PALMEIRAS - CEP 38412-288.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "4163",
+    "nome": "DIAMANTE DE PIRAPORA",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA ANTÔNIO NASCIMENTO, 371, CENTRO - CEP 39270-082.",
+    "cidade": "PIRAPORA / MG"
+  },
+  {
+    "numero": "4169",
+    "nome": "AURORA DE SÃO ROMÃO",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA RIO DE JANEIRO, 985, CENTRO - CEP 30160-915.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "4205",
+    "nome": "ESTRELA DE MINAS",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA ANÍBAL FERREIRA CÂNDIDO S/N, , SANTO ANTÔNIO - CEP 38190-000.",
+    "cidade": "SACRAMENTO / MG"
+  },
+  {
+    "numero": "4206",
+    "nome": "RAMOS DA LIBERDADE",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AVENIDA CESAR JORGE ELIAS, 195, CENTRO - CEP 37990-000.",
+    "cidade": "IBIRACI / MG"
+  },
+  {
+    "numero": "4213",
+    "nome": "ESTRELA DE ESPINOSA",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. DR. JOSÉ CANGUSSU, 320, CENTRO - CEP 39510-000.",
+    "cidade": "ESPINOSA / MG"
+  },
+  {
+    "numero": "4232",
+    "nome": "UNIÃO E JUSTIÇA DE CORONEL FABRICIANO",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DIAMANTINA, 143, CENTRO - CEP 35161054.",
+    "cidade": "IPATINGA / MG"
+  },
+  {
+    "numero": "4257",
+    "nome": "ACÁCIA DE CANDEIAS",
+    "sessao": "1ª E 3ª QUARTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. PEDRO VIEIRA DE AZEVEDO, 521, CENTRO - CEP 37280-000.",
+    "cidade": "CANDEIAS / MG"
+  },
+  {
+    "numero": "4258",
+    "nome": "PETER W. LUND",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. PREF. JOÃO DAHER, 245, CENTRO - CEP 33400-000.",
+    "cidade": "LAGOA SANTA / MG"
+  },
+  {
+    "numero": "4262",
+    "nome": "CAVALEIROS DA INCONFIDÊNCIA MINEIRA",
+    "sessao": "1ª E 3ª QUARTA-FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA IRMÃOS KENNEDY, 30, ÁGUA LIMPA - CEP 35404-379.",
+    "cidade": "OURO PRETO / MG"
+  },
+  {
+    "numero": "4280",
+    "nome": "JUSTIÇA E LIBERDADE DE ITAMOGI",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA MINISTRO MÁRIO MATTOS, 600, JD. DA AMIZADE - CEP 37955-000.",
+    "cidade": "ITAMOGI / MG"
+  },
+  {
+    "numero": "4281",
+    "nome": "PESQUISAS E ESTUDOS VOLTAIRE",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA BUENOPOLIS, 403, CEU AZUL - CEP 35790-653.",
+    "cidade": "CURVELO / MG"
+  },
+  {
+    "numero": "4282",
+    "nome": "OBREIROS DO VALE DO PIRAPETINGA",
+    "sessao": "1ª E 3ª QUARTA-FEIRA - 19:30H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. PREFEITO JOSÉ WANDERLEY LARA, 740, CENTRO - CEP 37220-000.",
+    "cidade": "BOM SUCESSO / MG"
+  },
+  {
+    "numero": "4283",
+    "nome": "CAVALEIROS DE AÇO",
+    "sessao": "1ª E 3ª TERÇA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PEDRO LESSA, 801, SANTO ANDRE - CEP 31210-580.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "4292",
+    "nome": "FRATERNIDADE DO TIJUCO",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DO TIJUCO, 512, RIO GRANDE - CEP 39100-000.",
+    "cidade": "DIAMANTINA / MG"
+  },
+  {
+    "numero": "4327",
+    "nome": "LUZ E SABEDORIA",
+    "sessao": "4ª FEIRA - 19H30",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA GENI GUIMARÃES SIQUEIRA, 153, MATOZINHOS - CEP 36305-049.",
+    "cidade": "SÃO JOÃO DEL REI / MG"
+  },
+  {
+    "numero": "4329",
+    "nome": "IR. DÉCIO ANDRADE PESSOA",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA DOS FERNANDES, 532, SÃO GERALDO - CEP 39500-000.",
+    "cidade": "MONTE AZUL / MG"
+  },
+  {
+    "numero": "4335",
+    "nome": "GUARDIÕES DE RIO PIRACICABA",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA OLGA DEMÉTRIO, 659, MANGABEIRAS - CEP 35930-192.",
+    "cidade": "JOÃO MONLEVADE / MG"
+  },
+  {
+    "numero": "4356",
+    "nome": "LUZ E SABEDORIA",
+    "sessao": "1ª E 3ª QUARTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PAULO PIVA, 630, IBIZA - CEP 38750-000.",
+    "cidade": "PRESIDENTE OLEGÁRIO / MG"
+  },
+  {
+    "numero": "4364",
+    "nome": "MILDO ALVES",
+    "sessao": "2ª E 4ª SEXTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA EDSON LUIZ FERREIRA N. 45, 45, CENTRO - CEP 38465-000.",
+    "cidade": "ARAPORÃ / MG"
+  },
+  {
+    "numero": "4369",
+    "nome": "CAVALEIROS DE SÃO JOÃO",
+    "sessao": "1ª E 3ª QUARTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOAO PESSOA, 85, CENTRO - CEP 37920-000.",
+    "cidade": "SÃO JOÃO BATISTA DO GLÓRIA / MG"
+  },
+  {
+    "numero": "4370",
+    "nome": "FLORES DA ACÁCIA",
+    "sessao": "3ª QUARTA-FEIRA - 19H30",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA DONA INÁCIA, 163, 163, CENTRO - CEP 37200-184.",
+    "cidade": "LAVRAS / MG"
+  },
+  {
+    "numero": "4397",
+    "nome": "OBREIROS INDEPENDENTES",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA VEREADOR ELIPCIO PIZZIOLLO, 165, ESTELA GAZOLA - CEP 36501-295.",
+    "cidade": "UBÁ / MG"
+  },
+  {
+    "numero": "4411",
+    "nome": "CAVALEIROS DE AÇO DO SUL DE MINAS",
+    "sessao": "SÁBADO - 10H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA DOUTOR BENEVENUTO BRAZ VIEIRA, 416, VILA ANDERE I - CEP 37004-630.",
+    "cidade": "VARGINHA / MG"
+  },
+  {
+    "numero": "4428",
+    "nome": "UNIÃO, AMOR E IGUALDADE",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA CRISTOVÃO COLOMBO, 228, JD. SÃO LUIZ - CEP 39401-855.",
+    "cidade": "MONTES CLAROS / MG"
+  },
+  {
+    "numero": "4440",
+    "nome": "BENEDITO VALADARES",
+    "sessao": "1ª TERÇA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. SEBASTIÃO DAYRELL DE LIMA, 5, BRASILEIA - CEP 32600-265.",
+    "cidade": "BETIM / MG"
+  },
+  {
+    "numero": "4468",
+    "nome": "TEMPLÁRIOS DO OESTE",
+    "sessao": "1ª E 3ª TERÇA-FEIRA - 19:30H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA JANUÁRIO SOUZA ROCHA, 245, BELVEDERE - CEP 35501-320.",
+    "cidade": "DIVINÓPOLIS / MG"
+  },
+  {
+    "numero": "4485",
+    "nome": "CAVALEIROS DE AÇO IR. JOÃO PAULO COELHO DE OLIVEIRA",
+    "sessao": "4ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "AV. JOAQUIM FERNANDES BRAGA, 80, CENTRO - CEP 36570-000.",
+    "cidade": "VIÇOSA / MG"
+  },
+  {
+    "numero": "4510",
+    "nome": "CAVALEIROS DE AÇO DO OESTE DE MINAS",
+    "sessao": "1º E 3º SÁBADO - 10H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JANUÁRIO SOUSA ROCHA, 245, BELVEDERE - CEP 35501-320.",
+    "cidade": "DIVINÓPOLIS / MG"
+  },
+  {
+    "numero": "4520",
+    "nome": "ACADÊMICA MESTRE ALEIJADINHO",
+    "sessao": "2ª SÁBADO - 16H E 4ª SEXTA-FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA RAIMUNDO SABARÁ, 55, PRAIA - CEP 36415-000.",
+    "cidade": "CONGONHAS / MG"
+  },
+  {
+    "numero": "4551",
+    "nome": "ACADÊMICA UNIÃO DE DIVINÓPOLIS",
+    "sessao": "2º E 4º SÁBADO - 9H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JANUÁRIO DE SOUZA ROCHA, 245, BELVEDERE - CEP 35501-320.",
+    "cidade": "DIVINÓPOLIS / MG"
+  },
+  {
+    "numero": "4571",
+    "nome": "UNIÃO, LEALDADE E JUSTIÇA",
+    "sessao": "4ª FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA CARLOS CHAGAS, 15, CENTRO - CEP 39205-000.",
+    "cidade": "TRÊS MARIAS / MG"
+  },
+  {
+    "numero": "4576",
+    "nome": "ALÍPIO SOARES",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA CÔNEGO FIRMIANO , 366, CRUZEIRO - CEP 35860-000.",
+    "cidade": "CONCEIÇÃO DO MATO DENTRO / MG"
+  },
+  {
+    "numero": "4594",
+    "nome": "ESTUDOS E PESQUISAS TRIÂNGULO DO SABER",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "RUA SOUZA COSTA, 159, MARACANÃ - CEP 38400-232.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "4598",
+    "nome": "FRATERNIDADE LAVRENSE",
+    "sessao": "3º SÁBADO DO MÊS - 9H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA JOSÉ PENIDO, 95, MORADA DO SOL III - CEP 37209-176.",
+    "cidade": "LAVRAS / MG"
+  },
+  {
+    "numero": "4600",
+    "nome": "FRATERNIDADE GUIDOVALENSE",
+    "sessao": "",
+    "rito": "",
+    "endereco": ", , - CEP .",
+    "cidade": "/"
+  },
+  {
+    "numero": "4604",
+    "nome": "EDSON ALVES",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA DO FAZENDEIRS, 680, JARDIM DAS PALMEIRAS - CEP 38412-288.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "4606",
+    "nome": "AURORA DAS ALTEROSAS",
+    "sessao": "2ª E 4ª QUINTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PRINCESA ISABEL, 4, CRUZEIRO - CEP 37145-000.",
+    "cidade": "ALTEROSA / MG"
+  },
+  {
+    "numero": "4609",
+    "nome": "AMPARO DA VIRTUDE II",
+    "sessao": "2ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "AV. CLARICINDA ALVES DE REZENDE, 200, PARAÍSO - CEP 38081-502.",
+    "cidade": "UBERABA / MG"
+  },
+  {
+    "numero": "4641",
+    "nome": "CAVALEIROS DE YORK",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO DE YORK",
+    "endereco": "AV. OSCAR DE PAIVA WESTIN, 1290, MORADA DA SERRA - CEP 37750-000.",
+    "cidade": "MACHADO / MG"
+  },
+  {
+    "numero": "4645",
+    "nome": "ESTUDOS E PESQUISAS CIÊNCIA E PROGRESSO",
+    "sessao": "2ª E 4ª QUINTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SOUZA COSTA, 159, TABAJARAS - CEP 38400-232.",
+    "cidade": "UBERLÂNDIA / MG"
+  },
+  {
+    "numero": "4647",
+    "nome": "ESTRELA DO MONTE",
+    "sessao": "3ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JUCA RESENDE , 30, RESIDENCIAL RECANTO DO ARARI - CEP 38500-000.",
+    "cidade": "MONTE CARMELO / MG"
+  },
+  {
+    "numero": "4669",
+    "nome": "ACADÊMICA ESTRELA DE CONTAGEM",
+    "sessao": "2ª E 4ª TERÇA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA NENÉM BICALHO, 65, ESTÂNCIA DO HIBISCO - CEP 32017-640.",
+    "cidade": "CONTAGEM / MG"
+  },
+  {
+    "numero": "4672",
+    "nome": "ACÁCIA DE PRATINHA",
+    "sessao": "2ª QUINTA-FEIRA - 19H30",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ORIGENES MARTINS DE MORAIS, 2, ZACARIAS PEREIRA - CEP 38960-000.",
+    "cidade": "PRATINHA / MG"
+  },
+  {
+    "numero": "4673",
+    "nome": "DIAMANTES DA CANASTRA",
+    "sessao": "1ª E 3ª TERÇA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA PERNAMBUCO, 885, JARDIN DAS OLIVEIRAS - CEP 37922-000.",
+    "cidade": "VARGEM BONITA / MG"
+  },
+  {
+    "numero": "4695",
+    "nome": "MARCELO VIEIRA LEAL",
+    "sessao": "1ª E 3ª QUINTA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "TRAVESSA AFONSO PENA, 42, CENTRO - CEP 35960-000.",
+    "cidade": "SANTA BÁRBARA / MG"
+  },
+  {
+    "numero": "4723",
+    "nome": "VIGILANTE PADRE LIBÉRIO",
+    "sessao": "SÁBADO - 10H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ANTÔNIO DE MELO, 8, CENTRO - CEP 35660-009.",
+    "cidade": "LEANDRO FERREIRA / MG"
+  },
+  {
+    "numero": "4724",
+    "nome": "FRANK ARTHUR MARSHALL",
+    "sessao": "1º E 3º SÁBADO - 09H",
+    "rito": "RITO DE YORK",
+    "endereco": "RUA JOSÉ PEDRO DA SILVA, 61, BELA VISTA - CEP 35574-240.",
+    "cidade": "FORMIGA / MG"
+  },
+  {
+    "numero": "4729",
+    "nome": "LEALDADE E TOLERÂNCIA",
+    "sessao": "SÁBADO - 10H",
+    "rito": "RITO MODERNO",
+    "endereco": "RUA LEOPOLDO SCHMIDT, 168, CENTRO - CEP 36060-040.",
+    "cidade": "JUIZ DE FORA / MG"
+  },
+  {
+    "numero": "4735",
+    "nome": "TEMPLÁRIOS DO REI",
+    "sessao": "1ª E 4ª QUARTA-FEIRA - 20H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA EQUADOR, 46, JD. AMÉRICA - CEP 37410-878.",
+    "cidade": "TRÊS CORAÇÕES / MG"
+  },
+  {
+    "numero": "4743",
+    "nome": "SENTINELAS DA FRATERNIDADE",
+    "sessao": "SÁBADO - 10H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA SETE DE SETEMBRO , 165, CENTRO - CEP 37900-012.",
+    "cidade": "PASSOS / MG"
+  },
+  {
+    "numero": "4748",
+    "nome": "SABEDORIA E FRATERNIDADE 119",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOÃO MAURO, 183, RIO BRANCO - CEP 31530-610.",
+    "cidade": "BELO HORIZONTE / MG"
+  },
+  {
+    "numero": "4756",
+    "nome": "CAVALEIROS DA UNIÃO",
+    "sessao": "5ª FEIRA - 20H",
+    "rito": "RITO DE YORK",
+    "endereco": "RUA JOSE HONORATO BORGES, 843, BELVEDERE - CEP 38742-474.",
+    "cidade": "PATROCÍNIO / MG"
+  },
+  {
+    "numero": "4763",
+    "nome": "CAVALEIROS DE AÇO ESTRADEIROS DO LESTE",
+    "sessao": "SÁBADO - 10H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA NOVENTA E CINCO, 371, JOÃO XXIII - CEP 35180-368.",
+    "cidade": "TIMÓTEO / MG"
+  },
+  {
+    "numero": "4771",
+    "nome": "JOSÉ FRANCISCO DE OLIVEIRA",
+    "sessao": "ULTIMO SÁBADO - 9H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA DIVINÓPOLIS, 256, CENTRO - CEP 35506-000.",
+    "cidade": "SÃO SEBASTIÃO DO OESTE / MG"
+  },
+  {
+    "numero": "4787",
+    "nome": "ALOÍSIO BATISTA DOS SANTOS",
+    "sessao": "ÚLTIMA 6ª FEIRA DO MÊS - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA NENÉM BICALHO, 65, SANTA LUZIA - CEP 32017-640.",
+    "cidade": "CONTAGEM / MG"
+  },
+  {
+    "numero": "4791",
+    "nome": "IDEALISTA DE HAMBURGO",
+    "sessao": "2ª E 4ª TERÇA-FEIRA - 20H",
+    "rito": "RITO SCHRÖDER",
+    "endereco": "AV. MAJOR ALEXANDRE RODRIGUES, 341, IBITURUNA - CEP 39013-01.",
+    "cidade": "MONTES CLAROS / MG"
+  },
+  {
+    "numero": "4793",
+    "nome": "FRATERNIDADE ANDRADENSE",
+    "sessao": "3ª FEIRA",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA JOSÉ DIRCEU GRAZIANI, 222, CENTRO - CEP 37795-000.",
+    "cidade": "ANDRADAS / MG"
+  },
+  {
+    "numero": "4802",
+    "nome": "ACADÊMICA CAMINHO DOS INCONFIDENTES",
+    "sessao": "1ª E 2ª TERÇA-FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ROSA AMÉLIA DE ANDRADE , 36, SÃO LUCAS - CEP 35494-000.",
+    "cidade": "ENTRE RIOS DE MINAS / MG"
+  },
+  {
+    "numero": "4827",
+    "nome": "AURORA",
+    "sessao": "3ª FEIRA - 19H30",
+    "rito": "RITO SCHRÖDER",
+    "endereco": "RUA ARTUR MACHADO, 40, CENTRO - CEP 38010-020.",
+    "cidade": "UBERABA / MG"
+  },
+  {
+    "numero": "4846",
+    "nome": "ESTRELA DE ABRAÃO",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ESCOCÊS ANTIGO E ACEITO",
+    "endereco": "RUA ESPÍRITO SANTO, 110, SÃO JOSÉ - CEP 35661-000.",
+    "cidade": "PARÁ DE MINAS / MG"
+  },
+  {
+    "numero": "4890",
+    "nome": "LUCAS TAVARES DE OLIVEIRA",
+    "sessao": "",
+    "rito": "RITO DE YORK",
+    "endereco": "ALAMEDA RIO CLARO, 121, TIETÊ - CEP 35502-479.",
+    "cidade": "DIVINÓPOLIS / MG"
+  },
+  {
+    "numero": "4897",
+    "nome": "OBREIROS DA ESTRADA REAL",
+    "sessao": "6ª FEIRA - 20H",
+    "rito": "RITO ADONHIRAMITA",
+    "endereco": "AV SILVIO FELICIO DOS SANTOS, 1050, BOM JESUS - CEP 39100-000.",
+    "cidade": "DIAMANTINA / MG"
+  },
+  {
+    "numero": "4913",
+    "nome": "LUZ E RAZÃO",
+    "sessao": "2º E 4º QUINTA-FEIRA - 20H",
+    "rito": "RITO MODERNO",
+    "endereco": "RUA UNIÃO DE CONTAGEM, 99, INCONFIDENTES - CEP 32260-230.",
+    "cidade": "CONTAGEM / MG"
+  },
+  {
+    "numero": "4956",
+    "nome": "ACÁCIA DO POLO",
+    "sessao": "1º E 3º SÁBADO - 09H",
+    "rito": "RITO BRASILEIRO",
+    "endereco": "RUA VER. ELIPCIO PIZZIOLLO, 165, ESTRELA GAZOLLA - CEP 36501-901.",
+    "cidade": "UBÁ / MG"
+  },
+  {
+    "numero": "9999",
+    "nome": "OUTROS ESTADOS",
+    "sessao": "",
+    "rito": "",
+    "endereco": ", , - CEP .",
+    "cidade": "BELO HORIZONTE / MG"
+  }
+]

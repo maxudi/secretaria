@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import {
   BalaustreFormData,
   DEFAULT_CONFIGURACAO_LOJA,
+  DiretoriaTitularMap,
 } from '../types/balaustre';
 import {
   comporRedacaoItemOrdemDia,
@@ -23,6 +24,7 @@ interface BalaustrePreviewModalProps {
   isOpen: boolean;
   onClose: () => void;
   data: BalaustreFormData;
+  diretoriaTitular?: DiretoriaTitularMap;
   onExportTxt: () => void;
 }
 
@@ -30,6 +32,7 @@ export const BalaustrePreviewModal: React.FC<BalaustrePreviewModalProps> = ({
   isOpen,
   onClose,
   data,
+  diretoriaTitular,
   onExportTxt,
 }) => {
   const [copiado, setCopiado] = useState(false);
@@ -73,7 +76,7 @@ export const BalaustrePreviewModal: React.FC<BalaustrePreviewModalProps> = ({
   };
 
   const c = data.cargos;
-  const cargosAtivos = obterCargosAtivosNaSessao(c);
+  const cargosAtivos = obterCargosAtivosNaSessao(c, diretoriaTitular);
   const ritoBrasileiro = ehRitoBrasileiro(loja.ritoPotencia);
   const possuiMestreCerimonias = !ehCargoSuprimido(
     c.mestreCerimonias?.irmaoSelecionado

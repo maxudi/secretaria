@@ -91,11 +91,23 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
   >('diretoria');
   const [modalHistoricoAberto, setModalHistoricoAberto] = useState(false);
   const [irmaosQuadro, setIrmaosQuadro] = useState<string[]>(() =>
-    carregarIrmaosQuadroSalvos()
+    carregarIrmaosQuadroSalvos(sessaoLogada?.lojaId || DEFAULT_LOJA_ALPHA_OMEGA_ID)
   );
   const [diretoriaTitular, setDiretoriaTitular] =
-    useState<DiretoriaTitularMap>(() => carregarDiretoriaTitularSalva());
+    useState<DiretoriaTitularMap>(() =>
+      carregarDiretoriaTitularSalva(
+        sessaoLogada?.lojaId || DEFAULT_LOJA_ALPHA_OMEGA_ID
+      )
+    );
   const [salvandoSupabase, setSalvandoSupabase] = useState(false);
+  const [ultimoAutoSaveHora, setUltimoAutoSaveHora] = useState<string | null>(
+    null
+  );
+  const [rascunhoPendenteRestaurar, setRascunhoPendenteRestaurar] = useState<{
+    numeroBalaustre: number;
+    salvoEm: string;
+    dados: BalaustreFormData;
+  } | null>(null);
   const [tipoNovoExpediente, setTipoNovoExpediente] =
     useState<TipoExpedienteRecebido>('normal');
   const [tipoNovaOrdemDia, setTipoNovaOrdemDia] =
@@ -106,9 +118,43 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
   } | null>(null);
 
   const configInicialLoja = carregarConfiguracaoLojaSalva();
-  const diretoriaInicial = carregarDiretoriaTitularSalva();
+  const diretoriaInicial = carregarDiretoriaTitularSalva(lojaIdAtiva);
   const ultimoNumeroInicialLoja =
     ultimoBalaustreNumero ?? obterUltimoNumeroBalaustreLocal(lojaIdAtiva);
+
+  const obterChaveRascunhoAutoSave = (idLoja: string) =>
+    `secretaria_rascunho_autosave_v1_${idLoja}`;
+
+  const verificarSePossuiConteudoParaAutoSave = (
+    d: BalaustreFormData
+  ): boolean => {
+    return Boolean(
+      d.dataSessao ||
+        d.horarioAbertura ||
+        d.grauTrabalhos ||
+        d.tipoSessao ||
+        (d.quorum?.qtdQuadroPresentes !== undefined &&
+          String(d.quorum.qtdQuadroPresentes).trim() !== '') ||
+        (d.balaustresLidos && d.balaustresLidos.length > 0) ||
+        (d.expedientesRecebidos && d.expedientesRecebidos.length > 0) ||
+        (d.itensSacoPropostas && d.itensSacoPropostas.length > 0) ||
+        (d.itensOrdemDia && d.itensOrdemDia.length > 0) ||
+        d.tempoInstrucao?.temaTitulo?.trim() ||
+        d.tempoInstrucao?.resumoInstrucao?.trim() ||
+        d.palavraBemDaOrdem?.textoConsolidadoAta?.trim() ||
+        (d.palavraBemDaOrdem?.colunaSul &&
+          d.palavraBemDaOrdem.colunaSul.length > 0) ||
+        (d.palavraBemDaOrdem?.colunaNorte &&
+          d.palavraBemDaOrdem.colunaNorte.length > 0) ||
+        (d.palavraBemDaOrdem?.colunaOriente &&
+          d.palavraBemDaOrdem.colunaOriente.length > 0) ||
+        (d.palavraBemDaOrdem?.colunaAltar &&
+          d.palavraBemDaOrdem.colunaAltar.length > 0) ||
+        d.palavraBemDaOrdem?.palavraOrador?.trim() ||
+        d.palavraBemDaOrdem?.palavraVeneravelMestre?.trim() ||
+        d.horarioEncerramento
+    );
+  };
 
   const {
     register,
@@ -270,10 +316,17 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
 
     // Sincroniza Quadro de Obreiros, Diretoria Titular, Cabeçalho/Logo e Sequência de Balaústre da Loja ativa com o Supabase
     sincronizarDadosIniciaisSupabase(lojaIdAtiva).then((res) => {
-      if (res.irmaos.length > 0) {
-        setIrmaosQuadro(res.irmaos);
-      }
+      setIrmaosQuadro(res.irmaos);
       setDiretoriaTitular(res.diretoria);
+
+      // Aplica a Diretoria da Loja ativa nos cargos da sessão (evitando herdar nomes de outra Loja quando vazio)
+      (Object.keys(res.diretoria) as (keyof DiretoriaTitularMap)[]).forEach(
+        (cargoKey) => {
+          setValue(`cargos.${cargoKey}.irmaoSelecionado`, res.diretoria[cargoKey] || '');
+          setValue(`cargos.${cargoKey}.nomeOutro`, '');
+          setValue(`cargos.${cargoKey}.isTitular`, true);
+        }
+      );
 
       // Atualiza o próximo número de Balaústre de acordo com a sequência real da Loja ativa
       const proximoDaLoja = (res.ultimoNumeroBalaustre || 0) + 1;
@@ -291,6 +344,78 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
       }
     });
   }, [getValues, setValue, lojaIdAtiva]);
+
+  // Verifica se há rascunho automático salvo para a Loja ativa ao abrir/alternar Loja
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(obterChaveRascunhoAutoSave(lojaIdAtiva));
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && parsed.dados && parsed.salvoEm) {
+          setRascunhoPendenteRestaurar({
+            numeroBalaustre:
+              Number(parsed.numeroBalaustre) ||
+              Number(parsed.dados.numeroBalaustre) ||
+              1,
+            salvoEm: String(parsed.salvoEm),
+            dados: parsed.dados as BalaustreFormData,
+          });
+          return;
+        }
+      }
+    } catch {
+      // Ignora erro de leitura
+    }
+    setRascunhoPendenteRestaurar(null);
+  }, [lojaIdAtiva]);
+
+  // Auto-salvamento (Auto-Save) automático de rascunho a cada 10 segundos
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      try {
+        const valoresAtuais = getValues();
+        if (!verificarSePossuiConteudoParaAutoSave(valoresAtuais)) {
+          return;
+        }
+        const agoraIso = new Date().toISOString();
+        localStorage.setItem(
+          obterChaveRascunhoAutoSave(lojaIdAtiva),
+          JSON.stringify({
+            lojaId: lojaIdAtiva,
+            numeroBalaustre: valoresAtuais.numeroBalaustre,
+            salvoEm: agoraIso,
+            dados: valoresAtuais,
+          })
+        );
+        setUltimoAutoSaveHora(
+          new Date().toLocaleTimeString('pt-BR', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+          })
+        );
+      } catch {
+        // Ignora caso localStorage esteja cheio
+      }
+    }, 10000);
+
+    return () => clearInterval(intervalo);
+  }, [getValues, lojaIdAtiva]);
+
+  const handleRestaurarRascunhoAutoSave = () => {
+    if (!rascunhoPendenteRestaurar) return;
+    reset(rascunhoPendenteRestaurar.dados);
+    setRascunhoPendenteRestaurar(null);
+    setStatusFeedback({
+      tipo: 'sucesso',
+      mensagem: `Rascunho automático do Balaústre Nº ${rascunhoPendenteRestaurar.numeroBalaustre} restaurado com sucesso!`,
+    });
+  };
+
+  const handleDescartarRascunhoAutoSave = () => {
+    localStorage.removeItem(obterChaveRascunhoAutoSave(lojaIdAtiva));
+    setRascunhoPendenteRestaurar(null);
+  };
 
   const handleSelecionarLojaMultiTenant = async (loja: LojaTenant) => {
     setLojaIdAtiva(loja.id);
@@ -320,10 +445,15 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
     }
 
     const res = await sincronizarDadosIniciaisSupabase(loja.id);
-    if (res.irmaos.length > 0) {
-      setIrmaosQuadro(res.irmaos);
-    }
+    setIrmaosQuadro(res.irmaos);
     setDiretoriaTitular(res.diretoria);
+    (Object.keys(res.diretoria) as (keyof DiretoriaTitularMap)[]).forEach(
+      (cargoKey) => {
+        setValue(`cargos.${cargoKey}.irmaoSelecionado`, res.diretoria[cargoKey] || '');
+        setValue(`cargos.${cargoKey}.nomeOutro`, '');
+        setValue(`cargos.${cargoKey}.isTitular`, true);
+      }
+    );
     setValue('numeroBalaustre', (res.ultimoNumeroBalaustre || 0) + 1);
 
     setStatusFeedback({
@@ -433,6 +563,8 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
       setSalvandoSupabase(true);
       setStatusFeedback(null);
       const resultado = await salvarBalaustreSupabase(data, lojaIdAtiva);
+      localStorage.removeItem(obterChaveRascunhoAutoSave(lojaIdAtiva));
+      setRascunhoPendenteRestaurar(null);
       setStatusFeedback({
         tipo: 'sucesso',
         mensagem: resultado.message,
@@ -466,6 +598,9 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
 
   // Iniciar um Novo Balaústre limpo com o próximo número da sequência da Loja
   const handleNovoBalaustre = (proximoNumero: number) => {
+    localStorage.removeItem(obterChaveRascunhoAutoSave(lojaIdAtiva));
+    setRascunhoPendenteRestaurar(null);
+    setUltimoAutoSaveHora(null);
     const configAtual = getValues('configuracaoLoja');
     reset({
       configuracaoLoja: configAtual,
@@ -867,7 +1002,13 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
             <span className="italic">
               "{dataPorExtensoLiturgica(dataSessaoWatch)}..."
             </span>
-            <div className="flex items-center gap-4 font-semibold">
+            <div className="flex flex-wrap items-center gap-4 font-semibold">
+              <span className="inline-flex items-center gap-1.5 rounded-md border border-[#D4AF37]/40 bg-white/10 px-2.5 py-0.5 text-[11px] text-amber-200">
+                💾{' '}
+                {ultimoAutoSaveHora
+                  ? `Auto-save: ${ultimoAutoSaveHora} (10s)`
+                  : 'Auto-save ativo (10s)'}
+              </span>
               <span>
                 Balaústre Nº{' '}
                 <strong className="text-[#D4AF37]">
@@ -936,6 +1077,44 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
           onSubmit={handleSubmit(onSubmit)}
           className="rounded-b-2xl border border-t-0 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-md space-y-10"
         >
+          {/* Banner de Restauração de Rascunho Automático (Auto-Save 10s) */}
+          {rascunhoPendenteRestaurar && (
+            <div className="rounded-xl border-2 border-[#D4AF37] bg-amber-50/90 dark:bg-amber-950/40 p-4 text-sm flex flex-wrap items-center justify-between gap-3 shadow-sm">
+              <div className="flex items-center gap-2.5 text-slate-800 dark:text-amber-100">
+                <span className="text-lg">💾</span>
+                <div>
+                  <p className="font-bold text-[#1a365d] dark:text-[#D4AF37]">
+                    Rascunho automático encontrado (Balaústre Nº{' '}
+                    {rascunhoPendenteRestaurar.numeroBalaustre})
+                  </p>
+                  <p className="text-xs text-slate-600 dark:text-slate-300">
+                    Salvo automaticamente em{' '}
+                    {new Date(
+                      rascunhoPendenteRestaurar.salvoEm
+                    ).toLocaleString('pt-BR')}
+                    . Deseja restaurar os dados preenchidos?
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={handleRestaurarRascunhoAutoSave}
+                  className="rounded-lg bg-[#1a365d] px-3.5 py-2 text-xs font-bold text-[#D4AF37] hover:bg-[#0B192C] transition-colors shadow-sm"
+                >
+                  ↺ Restaurar Rascunho
+                </button>
+                <button
+                  type="button"
+                  onClick={handleDescartarRascunhoAutoSave}
+                  className="rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 transition-colors"
+                >
+                  ✕ Descartar
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* Notificação de Status */}
           {statusFeedback && (
             <div
@@ -4333,6 +4512,7 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
         isOpen={modalPreviewAberto}
         onClose={() => setModalPreviewAberto(false)}
         data={watch()}
+        diretoriaTitular={diretoriaTitular}
         onExportTxt={handleExportarMinutaTxt}
       />
     </div>

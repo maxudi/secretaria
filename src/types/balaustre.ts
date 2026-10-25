@@ -64,10 +64,39 @@ export const DIRETORIA_TITULAR_PADRAO: DiretoriaTitularMap = {
   cobridorInterno: 'Ir∴ ANDRE LUIZ BORGES',
 };
 
+export const DIRETORIA_TITULAR_VAZIA: DiretoriaTitularMap = {
+  veneravelMestre: '',
+  primeiroVigilante: '',
+  segundoVigilante: '',
+  orador: '',
+  secretario: '',
+  tesoureiro: '',
+  chanceler: '',
+  mestreCerimonias: '',
+  hospitaleiro: '',
+  cobridorInterno: '',
+};
+
+const ID_LOJA_PADRAO_3402 = '00000000-0000-0000-0000-000000003402';
+
 export const STORAGE_KEY_IRMAOS_QUADRO = 'secretaria_irmaos_quadro_v1';
 export const STORAGE_KEY_IRMAOS_DETALHES =
   'secretaria_irmaos_quadro_detalhes_v1';
 export const STORAGE_KEY_DIRETORIA_TITULAR = 'secretaria_diretoria_titular_v1';
+
+function obterChaveQuadroLoja(lojaId?: string): string {
+  if (!lojaId || lojaId === ID_LOJA_PADRAO_3402) {
+    return STORAGE_KEY_IRMAOS_QUADRO;
+  }
+  return `${STORAGE_KEY_IRMAOS_QUADRO}_${lojaId}`;
+}
+
+function obterChaveDiretoriaLoja(lojaId?: string): string {
+  if (!lojaId || lojaId === ID_LOJA_PADRAO_3402) {
+    return STORAGE_KEY_DIRETORIA_TITULAR;
+  }
+  return `${STORAGE_KEY_DIRETORIA_TITULAR}_${lojaId}`;
+}
 
 export type StatusIrmaoQuadro = 'regular' | 'licenciado' | 'irregular';
 
@@ -150,52 +179,64 @@ export function salvarDetalhesIrmaosQuadroLocal(
   }
 }
 
-export function carregarIrmaosQuadroSalvos(): string[] {
-  if (typeof window === 'undefined') return [...IRMAOS_QUADRO];
+export function carregarIrmaosQuadroSalvos(lojaId?: string): string[] {
+  const ehLoja3402 = !lojaId || lojaId === ID_LOJA_PADRAO_3402;
+  const fallback = ehLoja3402 ? [...IRMAOS_QUADRO] : [];
+  if (typeof window === 'undefined') return fallback;
   try {
-    const raw = localStorage.getItem(STORAGE_KEY_IRMAOS_QUADRO);
-    if (!raw) return [...IRMAOS_QUADRO];
+    const raw = localStorage.getItem(obterChaveQuadroLoja(lojaId));
+    if (!raw) return fallback;
     const parsed = JSON.parse(raw);
-    if (Array.isArray(parsed) && parsed.length > 0) {
-      return parsed;
+    if (Array.isArray(parsed)) {
+      return ehLoja3402 && parsed.length === 0 ? fallback : parsed;
     }
-    return [...IRMAOS_QUADRO];
+    return fallback;
   } catch {
-    return [...IRMAOS_QUADRO];
+    return fallback;
   }
 }
 
-export function salvarIrmaosQuadroLocal(irmaos: string[]): void {
+export function salvarIrmaosQuadroLocal(
+  irmaos: string[],
+  lojaId?: string
+): void {
   if (typeof window === 'undefined') return;
   try {
-    localStorage.setItem(STORAGE_KEY_IRMAOS_QUADRO, JSON.stringify(irmaos));
+    localStorage.setItem(obterChaveQuadroLoja(lojaId), JSON.stringify(irmaos));
   } catch (err) {
     console.error('Erro ao salvar quadro de obreiros no localStorage:', err);
   }
 }
 
-export function carregarDiretoriaTitularSalva(): DiretoriaTitularMap {
-  if (typeof window === 'undefined') return { ...DIRETORIA_TITULAR_PADRAO };
+export function carregarDiretoriaTitularSalva(
+  lojaId?: string
+): DiretoriaTitularMap {
+  const ehLoja3402 = !lojaId || lojaId === ID_LOJA_PADRAO_3402;
+  const fallback = ehLoja3402
+    ? { ...DIRETORIA_TITULAR_PADRAO }
+    : { ...DIRETORIA_TITULAR_VAZIA };
+  if (typeof window === 'undefined') return fallback;
   try {
-    const raw = localStorage.getItem(STORAGE_KEY_DIRETORIA_TITULAR);
-    if (!raw) return { ...DIRETORIA_TITULAR_PADRAO };
+    const raw = localStorage.getItem(obterChaveDiretoriaLoja(lojaId));
+    if (!raw) return fallback;
     const parsed = JSON.parse(raw);
     return {
-      ...DIRETORIA_TITULAR_PADRAO,
+      ...fallback,
       ...parsed,
     };
   } catch {
-    return { ...DIRETORIA_TITULAR_PADRAO };
+    return fallback;
   }
 }
 
 export function salvarDiretoriaTitularLocal(
-  diretoria: DiretoriaTitularMap
+  diretoria: DiretoriaTitularMap,
+  lojaId?: string
 ): void {
   if (typeof window === 'undefined') return;
   try {
     localStorage.setItem(
-      STORAGE_KEY_DIRETORIA_TITULAR,
+      obterChaveDiretoriaLoja(lojaId),
       JSON.stringify(diretoria)
     );
   } catch (err) {
@@ -324,7 +365,7 @@ export type StatusAprovacaoBalaustre =
 
 export const oficialCargoSchema = z
   .object({
-    irmaoSelecionado: z.string().min(1, 'Selecione um Irmão ou "outro"'),
+    irmaoSelecionado: z.string().default(''),
     nomeOutro: z.string().optional(),
     isTitular: z.boolean().default(true),
   })

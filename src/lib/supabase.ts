@@ -102,8 +102,9 @@ export async function sincronizarDadosIniciaisSupabase(
   ultimoNumeroBalaustre: number;
   sincronizadoNuvem: boolean;
 }> {
-  const irmaosLocal = carregarIrmaosQuadroSalvos();
-  const diretoriaLocal = carregarDiretoriaTitularSalva();
+  const ehLoja3402 = lojaId === DEFAULT_LOJA_ALPHA_OMEGA_ID;
+  const irmaosLocal = carregarIrmaosQuadroSalvos(lojaId);
+  const diretoriaLocal = carregarDiretoriaTitularSalva(lojaId);
   const ultimoLocal = obterUltimoNumeroBalaustreLocal(lojaId);
 
   if (!supabaseClient) {
@@ -147,36 +148,37 @@ export async function sincronizarDadosIniciaisSupabase(
     let irmaosFinais = irmaosLocal;
     let sincronizado = false;
 
-    if (
-      !resIrmaos.error &&
-      Array.isArray(resIrmaos.data) &&
-      resIrmaos.data.length > 0
-    ) {
-      irmaosFinais = resIrmaos.data.map((r: any) => String(r.nome_exibicao));
-      salvarIrmaosQuadroLocal(irmaosFinais);
+    if (!resIrmaos.error && Array.isArray(resIrmaos.data)) {
+      if (resIrmaos.data.length > 0) {
+        irmaosFinais = resIrmaos.data.map((r: any) => String(r.nome_exibicao));
+        salvarIrmaosQuadroLocal(irmaosFinais, lojaId);
 
-      const mapaDetalhes = carregarDetalhesIrmaosQuadroLocal();
-      for (const r of resIrmaos.data as any[]) {
-        const nome = String(r.nome_exibicao);
-        const existente = mapaDetalhes[nome];
-        const statusBanco =
-          r.situacao === 'licenciado' || r.situacao === 'irregular'
-            ? r.situacao
-            : existente?.status || 'regular';
-        const honorarioBanco =
-          typeof r.membro_honorario === 'boolean'
-            ? r.membro_honorario
-            : Boolean(existente?.membroHonorario);
+        const mapaDetalhes = carregarDetalhesIrmaosQuadroLocal();
+        for (const r of resIrmaos.data as any[]) {
+          const nome = String(r.nome_exibicao);
+          const existente = mapaDetalhes[nome];
+          const statusBanco =
+            r.situacao === 'licenciado' || r.situacao === 'irregular'
+              ? r.situacao
+              : existente?.status || 'regular';
+          const honorarioBanco =
+            typeof r.membro_honorario === 'boolean'
+              ? r.membro_honorario
+              : Boolean(existente?.membroHonorario);
 
-        mapaDetalhes[nome] = {
-          cim: r.cim ? String(r.cim) : existente?.cim || '',
-          telefone: r.telefone ? String(r.telefone) : existente?.telefone || '',
-          status: statusBanco,
-          membroHonorario: honorarioBanco,
-        };
+          mapaDetalhes[nome] = {
+            cim: r.cim ? String(r.cim) : existente?.cim || '',
+            telefone: r.telefone ? String(r.telefone) : existente?.telefone || '',
+            status: statusBanco,
+            membroHonorario: honorarioBanco,
+          };
+        }
+        salvarDetalhesIrmaosQuadroLocal(mapaDetalhes);
+        sincronizado = true;
+      } else if (!ehLoja3402) {
+        irmaosFinais = [];
+        salvarIrmaosQuadroLocal([], lojaId);
       }
-      salvarDetalhesIrmaosQuadroLocal(mapaDetalhes);
-      sincronizado = true;
     }
 
     let diretoriaFinal = diretoriaLocal;
@@ -184,23 +186,46 @@ export async function sincronizarDadosIniciaisSupabase(
       const d = resDiretoria.data as any;
       diretoriaFinal = {
         veneravelMestre:
-          d.veneravel_mestre_nome || diretoriaLocal.veneravelMestre,
+          d.veneravel_mestre_nome ??
+          (ehLoja3402 ? diretoriaLocal.veneravelMestre : ''),
         primeiroVigilante:
-          d.primeiro_vigilante_nome || diretoriaLocal.primeiroVigilante,
+          d.primeiro_vigilante_nome ??
+          (ehLoja3402 ? diretoriaLocal.primeiroVigilante : ''),
         segundoVigilante:
-          d.segundo_vigilante_nome || diretoriaLocal.segundoVigilante,
-        orador: d.orador_nome || diretoriaLocal.orador,
-        secretario: d.secretario_nome || diretoriaLocal.secretario,
-        tesoureiro: d.tesoureiro_nome || diretoriaLocal.tesoureiro,
-        chanceler: d.chanceler_nome || diretoriaLocal.chanceler,
+          d.segundo_vigilante_nome ??
+          (ehLoja3402 ? diretoriaLocal.segundoVigilante : ''),
+        orador: d.orador_nome ?? (ehLoja3402 ? diretoriaLocal.orador : ''),
+        secretario:
+          d.secretario_nome ?? (ehLoja3402 ? diretoriaLocal.secretario : ''),
+        tesoureiro:
+          d.tesoureiro_nome ?? (ehLoja3402 ? diretoriaLocal.tesoureiro : ''),
+        chanceler:
+          d.chanceler_nome ?? (ehLoja3402 ? diretoriaLocal.chanceler : ''),
         mestreCerimonias:
-          d.mestre_cerimonias_nome || diretoriaLocal.mestreCerimonias,
-        hospitaleiro: d.hospitaleiro_nome || diretoriaLocal.hospitaleiro,
+          d.mestre_cerimonias_nome ??
+          (ehLoja3402 ? diretoriaLocal.mestreCerimonias : ''),
+        hospitaleiro:
+          d.hospitaleiro_nome ?? (ehLoja3402 ? diretoriaLocal.hospitaleiro : ''),
         cobridorInterno:
-          d.cobridor_interno_nome || diretoriaLocal.cobridorInterno,
+          d.cobridor_interno_nome ??
+          (ehLoja3402 ? diretoriaLocal.cobridorInterno : ''),
       };
-      salvarDiretoriaTitularLocal(diretoriaFinal);
+      salvarDiretoriaTitularLocal(diretoriaFinal, lojaId);
       sincronizado = true;
+    } else if (!resDiretoria.error && !resDiretoria.data && !ehLoja3402) {
+      diretoriaFinal = {
+        veneravelMestre: '',
+        primeiroVigilante: '',
+        segundoVigilante: '',
+        orador: '',
+        secretario: '',
+        tesoureiro: '',
+        chanceler: '',
+        mestreCerimonias: '',
+        hospitaleiro: '',
+        cobridorInterno: '',
+      };
+      salvarDiretoriaTitularLocal(diretoriaFinal, lojaId);
     }
 
     let configLojaNuvem: Partial<ConfiguracaoLoja> | undefined;
@@ -260,9 +285,9 @@ export async function salvarQuadroEDiretoriaSupabase(params: {
     a.localeCompare(b, 'pt-BR')
   );
 
-  // 1. Salva sempre no localStorage imediatamente
-  salvarIrmaosQuadroLocal(irmaosOrdenados);
-  salvarDiretoriaTitularLocal(params.diretoria);
+  // 1. Salva sempre no localStorage imediatamente (isolado por lojaId)
+  salvarIrmaosQuadroLocal(irmaosOrdenados, lojaId);
+  salvarDiretoriaTitularLocal(params.diretoria, lojaId);
 
   if (!supabaseClient) {
     return {
@@ -2929,7 +2954,7 @@ export function converterRowParaFormData(
   row: BalaustreSupabaseRow
 ): BalaustreFormData {
   const configPadrao = carregarConfiguracaoLojaSalva();
-  const diretoriaPadrao = carregarDiretoriaTitularSalva();
+  const diretoriaPadrao = carregarDiretoriaTitularSalva(row.loja_id);
 
   const cfgJson =
     row.configuracao_loja_json &&

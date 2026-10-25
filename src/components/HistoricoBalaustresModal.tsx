@@ -114,7 +114,7 @@ export const HistoricoBalaustresModal: React.FC<
   const proximoNumero =
     lista.length > 0
       ? Math.max(...lista.map((r) => Number(r.numero_balaustre) || 0)) + 1
-      : 142;
+      : 1;
 
   const formatarDataBR = (iso: string) => {
     if (!iso || !iso.includes('-')) return iso;

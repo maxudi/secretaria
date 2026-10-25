@@ -44,6 +44,7 @@ import {
 import { TODAS_UFS_BRASIL } from '../data/lojasCatalogo';
 import {
   DEFAULT_LOJA_ALPHA_OMEGA_ID,
+  obterUltimoNumeroBalaustreLocal,
   salvarBalaustreSupabase,
   salvarConfiguracaoLojaSupabase,
   salvarQuadroEDiretoriaSupabase,
@@ -69,7 +70,7 @@ interface BalaustreFormProps {
 type AbaId = 'basicos' | 'expediente' | 'ordem_dia' | 'palavra_encerramento';
 
 export const BalaustreForm: React.FC<BalaustreFormProps> = ({
-  ultimoBalaustreNumero = 141,
+  ultimoBalaustreNumero,
   onSuccessSave,
   sessaoLogada,
   onLogout,
@@ -104,9 +105,10 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
     mensagem: string;
   } | null>(null);
 
-  const hojeIso = new Date().toISOString().split('T')[0];
   const configInicialLoja = carregarConfiguracaoLojaSalva();
   const diretoriaInicial = carregarDiretoriaTitularSalva();
+  const ultimoNumeroInicialLoja =
+    ultimoBalaustreNumero ?? obterUltimoNumeroBalaustreLocal(lojaIdAtiva);
 
   const {
     register,
@@ -121,11 +123,11 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
     resolver: zodResolver(balaustreSchema) as any,
     defaultValues: {
       configuracaoLoja: configInicialLoja,
-      numeroBalaustre: ultimoBalaustreNumero + 1,
-      dataSessao: hojeIso,
-      horarioAbertura: '20:00',
-      grauTrabalhos: 'aprendiz',
-      tipoSessao: 'ordinaria',
+      numeroBalaustre: ultimoNumeroInicialLoja + 1,
+      dataSessao: '',
+      horarioAbertura: '',
+      grauTrabalhos: '' as any,
+      tipoSessao: '' as any,
       cargos: {
         veneravelMestre: {
           irmaoSelecionado: diretoriaInicial.veneravelMestre,
@@ -179,16 +181,19 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
         },
       },
       quorum: {
-        qtdQuadroPresentes: 21,
-        qtdVisitantesPresentes: 0,
+        qtdQuadroPresentes: '' as any,
+        qtdVisitantesPresentes: '' as any,
       },
-      balaustresLidos: [
-        {
-          numero: ultimoBalaustreNumero,
-          statusAprovacao: 'aprovado_sem_restricoes',
-          emendasObservacao: '',
-        },
-      ],
+      balaustresLidos:
+        ultimoNumeroInicialLoja > 0
+          ? [
+              {
+                numero: ultimoNumeroInicialLoja,
+                statusAprovacao: 'aprovado_sem_restricoes',
+                emendasObservacao: '',
+              },
+            ]
+          : [],
       expedientesRecebidos: [],
       sacoPropostasResultadoGeral:
         'O saco de propostas e informações colheu apenas bons fluidos.',
@@ -211,12 +216,10 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
         colunaNorte: [],
         colunaOriente: [],
         colunaAltar: [],
-        palavraOrador:
-          'Saudou os IIr∴ presentes e visitantes, atestando que os trabalhos transcorreram de forma justa, perfeita e dentro da legalidade maçônica.',
-        palavraVeneravelMestre:
-          'Agradeceu a presença e dedicação dos IIr∴ do Quadro e Visitantes, desejando um retorno seguro aos seus lares.',
+        palavraOrador: '',
+        palavraVeneravelMestre: '',
       },
-      horarioEncerramento: '21:45',
+      horarioEncerramento: '',
     },
   });
 
@@ -248,7 +251,7 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
   const qtdVisitantesWatch = watch('quorum.qtdVisitantesPresentes') || 0;
   const totalPresentes = Number(qtdQuadroWatch) + Number(qtdVisitantesWatch);
 
-  // Garante que o texto padrão da Hospitalaria e os novos campos do cabeçalho da Loja apareçam mesmo após Hot Reload
+  // Garante que o texto padrão da Hospitalaria, a sequência de Balaústre da Loja e os dados do cabeçalho sincronizem com o Supabase
   useEffect(() => {
     const destinoAtual = getValues('troncoBeneficencia.destinoConferencia');
     if (
@@ -274,12 +277,31 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
       );
     }
 
-    // Sincroniza Quadro de Obreiros, Diretoria Titular e Cabeçalho/Logo da Loja ativa com o Supabase
+    // Sincroniza Quadro de Obreiros, Diretoria Titular, Cabeçalho/Logo e Sequência de Balaústre da Loja ativa com o Supabase
     sincronizarDadosIniciaisSupabase(lojaIdAtiva).then((res) => {
       if (res.irmaos.length > 0) {
         setIrmaosQuadro(res.irmaos);
       }
       setDiretoriaTitular(res.diretoria);
+
+      // Atualiza o próximo número de Balaústre de acordo com a sequência real da Loja ativa
+      const proximoDaLoja = (res.ultimoNumeroBalaustre || 0) + 1;
+      setValue('numeroBalaustre', proximoDaLoja);
+      if (res.ultimoNumeroBalaustre > 0) {
+        const lidosAtuais = getValues('balaustresLidos') || [];
+        if (lidosAtuais.length <= 1) {
+          setValue('balaustresLidos', [
+            {
+              numero: res.ultimoNumeroBalaustre,
+              statusAprovacao: 'aprovado_sem_restricoes',
+              emendasObservacao: lidosAtuais[0]?.emendasObservacao || '',
+            },
+          ]);
+        }
+      } else {
+        setValue('balaustresLidos', []);
+      }
+
       if (res.configLoja) {
         const atual = getValues('configuracaoLoja');
         const mesclada: ConfiguracaoLoja = {
@@ -325,6 +347,7 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
       setIrmaosQuadro(res.irmaos);
     }
     setDiretoriaTitular(res.diretoria);
+    setValue('numeroBalaustre', (res.ultimoNumeroBalaustre || 0) + 1);
 
     setStatusFeedback({
       tipo: 'sucesso',
@@ -464,16 +487,16 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
     }
   };
 
-  // Iniciar um Novo Balaústre limpo com o próximo número
+  // Iniciar um Novo Balaústre limpo com o próximo número da sequência da Loja
   const handleNovoBalaustre = (proximoNumero: number) => {
     const configAtual = getValues('configuracaoLoja');
     reset({
       configuracaoLoja: configAtual,
       numeroBalaustre: proximoNumero,
-      dataSessao: hojeIso,
-      horarioAbertura: '20:00',
-      grauTrabalhos: 'aprendiz',
-      tipoSessao: 'ordinaria',
+      dataSessao: '',
+      horarioAbertura: '',
+      grauTrabalhos: '' as any,
+      tipoSessao: '' as any,
       cargos: {
         veneravelMestre: {
           irmaoSelecionado: diretoriaTitular.veneravelMestre,
@@ -527,16 +550,19 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
         },
       },
       quorum: {
-        qtdQuadroPresentes: 21,
-        qtdVisitantesPresentes: 0,
+        qtdQuadroPresentes: '' as any,
+        qtdVisitantesPresentes: '' as any,
       },
-      balaustresLidos: [
-        {
-          numero: Math.max(1, proximoNumero - 1),
-          statusAprovacao: 'aprovado_sem_restricoes',
-          emendasObservacao: '',
-        },
-      ],
+      balaustresLidos:
+        proximoNumero > 1
+          ? [
+              {
+                numero: proximoNumero - 1,
+                statusAprovacao: 'aprovado_sem_restricoes',
+                emendasObservacao: '',
+              },
+            ]
+          : [],
       expedientesRecebidos: [],
       sacoPropostasResultadoGeral: gerarFrasePadraoSacoPropostas(0),
       itensSacoPropostas: [],
@@ -561,7 +587,7 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
         palavraOrador: '',
         palavraVeneravelMestre: '',
       },
-      horarioEncerramento: '22:00',
+      horarioEncerramento: '',
     });
     setAbaAtiva('basicos');
     setStatusFeedback({
@@ -1040,6 +1066,11 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
                       {...register('dataSessao')}
                       className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-[#F9F8F6] dark:bg-slate-800 px-3.5 py-2.5 text-sm focus:border-[#1a365d] focus:outline-none"
                     />
+                    {errors.dataSessao && (
+                      <p className="mt-1 text-xs text-red-600">
+                        {errors.dataSessao.message}
+                      </p>
+                    )}
                   </div>
 
                   {/* Horário de Abertura */}
@@ -1052,6 +1083,11 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
                       {...register('horarioAbertura')}
                       className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-[#F9F8F6] dark:bg-slate-800 px-3.5 py-2.5 text-sm focus:border-[#1a365d] focus:outline-none"
                     />
+                    {errors.horarioAbertura && (
+                      <p className="mt-1 text-xs text-red-600">
+                        {errors.horarioAbertura.message}
+                      </p>
+                    )}
                   </div>
 
                   {/* Grau dos Trabalhos */}
@@ -1063,10 +1099,16 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
                       {...register('grauTrabalhos')}
                       className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-[#F9F8F6] dark:bg-slate-800 px-3 py-2.5 text-sm font-medium focus:border-[#1a365d] focus:outline-none"
                     >
+                      <option value="">-- Selecione o Grau --</option>
                       <option value="aprendiz">Grau 1 (Aprendiz)</option>
                       <option value="companheiro">Grau 2 (Companheiro)</option>
                       <option value="mestre">Grau 3 (Mestre)</option>
                     </select>
+                    {errors.grauTrabalhos && (
+                      <p className="mt-1 text-xs text-red-600">
+                        {errors.grauTrabalhos.message}
+                      </p>
+                    )}
                   </div>
 
                   {/* Tipo de Sessão */}
@@ -1078,6 +1120,7 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
                       {...register('tipoSessao')}
                       className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-[#F9F8F6] dark:bg-slate-800 px-3 py-2.5 text-sm font-medium focus:border-[#1a365d] focus:outline-none"
                     >
+                      <option value="">-- Selecione o Tipo --</option>
                       <option value="ordinaria">Ordinária</option>
                       <option value="magna_iniciacao">
                         Magna de Iniciação
@@ -1095,6 +1138,11 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
                       <option value="extraordinaria">Extraordinária</option>
                       <option value="funebre">Fúnebre / Pompas Fúnebres</option>
                     </select>
+                    {errors.tipoSessao && (
+                      <p className="mt-1 text-xs text-red-600">
+                        {errors.tipoSessao.message}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -1249,9 +1297,15 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
                     <input
                       type="number"
                       min={0}
+                      placeholder="Informe a quantidade..."
                       {...register('quorum.qtdQuadroPresentes')}
                       className="w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-3.5 py-2.5 text-base font-bold text-[#1a365d] dark:text-white focus:border-[#1a365d] focus:outline-none"
                     />
+                    {errors.quorum?.qtdQuadroPresentes && (
+                      <p className="mt-1 text-xs text-red-600">
+                        {errors.quorum.qtdQuadroPresentes.message}
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -1261,6 +1315,7 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
                     <input
                       type="number"
                       min={0}
+                      placeholder="0"
                       {...register('quorum.qtdVisitantesPresentes')}
                       className="w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-3.5 py-2.5 text-base font-bold text-[#1a365d] dark:text-white focus:border-[#1a365d] focus:outline-none"
                     />
@@ -1313,7 +1368,10 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
                     type="button"
                     onClick={() =>
                       balaustresArray.append({
-                        numero: ultimoBalaustreNumero,
+                        numero: Math.max(
+                          1,
+                          (Number(watch('numeroBalaustre')) || 2) - 1
+                        ),
                         statusAprovacao: 'aprovado_sem_restricoes',
                         emendasObservacao: '',
                       })

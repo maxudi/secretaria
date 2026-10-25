@@ -46,7 +46,51 @@ export const supabaseClient: SupabaseClient | null =
   supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null;
 
 /**
- * Carrega o Quadro de Obreiros, a Diretoria Titular e a Configuração da Loja do Supabase
+ * Obtém sincronicamente o último número de Balaústre conhecido localmente para a Loja ativa.
+ * Para a Loja 3402 (Alpha e Ômega), parte do último Balaústre cadastrado (57); para novas Lojas, parte de 0.
+ */
+export function obterUltimoNumeroBalaustreLocal(
+  lojaId: string = DEFAULT_LOJA_ALPHA_OMEGA_ID
+): number {
+  let maior = lojaId === DEFAULT_LOJA_ALPHA_OMEGA_ID ? 57 : 0;
+  if (typeof window === 'undefined') return maior;
+
+  try {
+    const chavesAntigasDescartar = new Set([
+      '53:2026-09-29',
+      '55:2026-10-13',
+      '56:2026-10-20',
+    ]);
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith('balaustre_3402_')) {
+        const raw = localStorage.getItem(key);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          const lojaDoRegistro = parsed?.loja_id || DEFAULT_LOJA_ALPHA_OMEGA_ID;
+          if (parsed && parsed.numero_balaustre && lojaDoRegistro === lojaId) {
+            if (
+              chavesAntigasDescartar.has(
+                `${parsed.numero_balaustre}:${parsed.data_sessao}`
+              )
+            ) {
+              continue;
+            }
+            const num = Number(parsed.numero_balaustre) || 0;
+            if (num > maior) maior = num;
+          }
+        }
+      }
+    }
+  } catch {
+    // Ignora falha de leitura local
+  }
+
+  return maior;
+}
+
+/**
+ * Carrega o Quadro de Obreiros, a Diretoria Titular, a Configuração da Loja e o último Nº de Balaústre do Supabase
  * (fazendo fallback seguro para localStorage caso o RLS ainda bloqueie ou esteja offline).
  */
 export async function sincronizarDadosIniciaisSupabase(
@@ -55,21 +99,24 @@ export async function sincronizarDadosIniciaisSupabase(
   irmaos: string[];
   diretoria: DiretoriaTitularMap;
   configLoja?: Partial<ConfiguracaoLoja>;
+  ultimoNumeroBalaustre: number;
   sincronizadoNuvem: boolean;
 }> {
   const irmaosLocal = carregarIrmaosQuadroSalvos();
   const diretoriaLocal = carregarDiretoriaTitularSalva();
+  const ultimoLocal = obterUltimoNumeroBalaustreLocal(lojaId);
 
   if (!supabaseClient) {
     return {
       irmaos: irmaosLocal,
       diretoria: diretoriaLocal,
+      ultimoNumeroBalaustre: ultimoLocal,
       sincronizadoNuvem: false,
     };
   }
 
   try {
-    const [resIrmaos, resDiretoria, resLoja] = await Promise.all([
+    const [resIrmaos, resDiretoria, resLoja, resUltimoBal] = await Promise.all([
       supabaseClient
         .from('irmaos_quadro')
         .select('*')
@@ -87,6 +134,13 @@ export async function sincronizarDadosIniciaisSupabase(
         .from('lojas')
         .select('*')
         .eq('id', lojaId)
+        .maybeSingle(),
+      supabaseClient
+        .from('balaustres')
+        .select('numero_balaustre')
+        .eq('loja_id', lojaId)
+        .order('numero_balaustre', { ascending: false })
+        .limit(1)
         .maybeSingle(),
     ]);
 
@@ -172,16 +226,21 @@ export async function sincronizarDadosIniciaisSupabase(
       sincronizado = true;
     }
 
+    const numeroNuvem = Number((resUltimoBal?.data as any)?.numero_balaustre) || 0;
+    const ultimoNumeroFinal = Math.max(ultimoLocal, numeroNuvem);
+
     return {
       irmaos: irmaosFinais,
       diretoria: diretoriaFinal,
       configLoja: configLojaNuvem,
+      ultimoNumeroBalaustre: ultimoNumeroFinal,
       sincronizadoNuvem: sincronizado,
     };
   } catch {
     return {
       irmaos: irmaosLocal,
       diretoria: diretoriaLocal,
+      ultimoNumeroBalaustre: ultimoLocal,
       sincronizadoNuvem: false,
     };
   }

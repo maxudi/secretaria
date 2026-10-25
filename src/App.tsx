@@ -27,7 +27,6 @@ export function App() {
 
   return (
     <BalaustreForm
-      ultimoBalaustreNumero={141}
       sessaoLogada={sessaoLogada}
       onLogout={handleLogout}
     />

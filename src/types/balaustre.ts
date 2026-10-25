@@ -583,17 +583,24 @@ export const balaustreSchema = z.object({
     .positive('O número do Balaústre deve ser maior que zero'),
   dataSessao: z.string().min(1, 'A data da sessão é obrigatória'),
   horarioAbertura: z.string().min(1, 'O horário de abertura é obrigatório'),
-  grauTrabalhos: z.enum(['aprendiz', 'companheiro', 'mestre']),
-  tipoSessao: z.enum([
-    'ordinaria',
-    'magna_iniciacao',
-    'magna_elevacao',
-    'magna_exaltacao',
-    'magna_instalacao_posse',
-    'magna_outra',
-    'extraordinaria',
-    'funebre',
-  ]),
+  grauTrabalhos: z.enum(['aprendiz', 'companheiro', 'mestre'], {
+    errorMap: () => ({ message: 'Selecione o Grau dos Trabalhos' }),
+  }),
+  tipoSessao: z.enum(
+    [
+      'ordinaria',
+      'magna_iniciacao',
+      'magna_elevacao',
+      'magna_exaltacao',
+      'magna_instalacao_posse',
+      'magna_outra',
+      'extraordinaria',
+      'funebre',
+    ],
+    {
+      errorMap: () => ({ message: 'Selecione o Tipo de Sessão' }),
+    }
+  ),
 
   // 2. Ocupação dos Cargos em Loja
   cargos: z.object({
@@ -611,8 +618,22 @@ export const balaustreSchema = z.object({
 
   // 3. Livro de Presenças & Quórum (Chancelaria)
   quorum: z.object({
-    qtdQuadroPresentes: z.coerce.number().int().min(0, 'Mínimo 0'),
-    qtdVisitantesPresentes: z.coerce.number().int().min(0, 'Mínimo 0'),
+    qtdQuadroPresentes: z.preprocess(
+      (val) =>
+        val === '' || val === null || val === undefined ? NaN : Number(val),
+      z
+        .number({
+          invalid_type_error:
+            'Informe a quantidade de Irmãos do Quadro presentes',
+        })
+        .int()
+        .min(0, 'Mínimo 0')
+    ),
+    qtdVisitantesPresentes: z.preprocess(
+      (val) =>
+        val === '' || val === null || val === undefined ? 0 : Number(val),
+      z.number().int().min(0, 'Mínimo 0')
+    ),
   }),
 
   // 4. Expediente e Matérias

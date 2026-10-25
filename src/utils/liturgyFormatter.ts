@@ -403,16 +403,16 @@ export function dataPorExtensoLiturgica(dataStr: string): string {
   return `Aos ${diaTexto} dias do mês de ${mesNome} do ano de ${ano} da E∴ V∴`;
 }
 
-export function obterDescricaoGrau(grau: GrauTrabalhos): string {
+export function obterDescricaoGrau(grau?: GrauTrabalhos | string): string {
   const mapa: Record<GrauTrabalhos, string> = {
     aprendiz: 'GRAU 1 – APRENDIZ MAÇOM',
     companheiro: 'GRAU 2 – COMPANHEIRO MAÇOM',
     mestre: 'GRAU 3 – MESTRE MAÇOM',
   };
-  return mapa[grau];
+  return (grau && mapa[grau as GrauTrabalhos]) || '[GRAU NÃO SELECIONADO]';
 }
 
-export function obterDescricaoTipoSessao(tipo: TipoSessao): string {
+export function obterDescricaoTipoSessao(tipo?: TipoSessao | string): string {
   const mapa: Record<TipoSessao, string> = {
     ordinaria: 'Sessão Ordinária',
     magna_iniciacao: 'Sessão Magna de Iniciação',
@@ -423,7 +423,7 @@ export function obterDescricaoTipoSessao(tipo: TipoSessao): string {
     extraordinaria: 'Sessão Extraordinária',
     funebre: 'Sessão Fúnebre / Pompas Fúnebres',
   };
-  return mapa[tipo];
+  return (tipo && mapa[tipo as TipoSessao]) || '[TIPO DE SESSÃO NÃO SELECIONADO]';
 }
 
 /**

@@ -33,6 +33,7 @@ import {
   comporTextoExpedienteConvite,
   comporTituloOrdemDiaDeOficio,
   dataPorExtensoLiturgica,
+  ehRitoBrasileiro,
   formatarListaBalaustresLidos,
   formatarMoedaBRL,
   formatarTroncoComExtenso,
@@ -4045,11 +4046,18 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
           {(exibirTodasSecoes || abaAtiva === 'palavra_encerramento') && (
             <section className="space-y-8 animate-fadeIn">
               <div>
-                <div className="flex items-center gap-2 border-b-2 border-[#D4AF37]/50 pb-2 mb-5">
-                  <span className="text-[#D4AF37] font-bold">∴</span>
-                  <h2 className="text-lg font-bold text-[#1a365d] dark:text-white">
-                    8. Palavra a Bem Geral da Ordem e do Quadro em Particular
-                  </h2>
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b-2 border-[#D4AF37]/50 pb-2 mb-5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#D4AF37] font-bold">∴</span>
+                    <h2 className="text-lg font-bold text-[#1a365d] dark:text-white">
+                      8. Palavra a Bem Geral da Ordem e do Quadro em Particular
+                    </h2>
+                  </div>
+                  <span className="rounded-full border border-[#D4AF37]/60 bg-amber-50 dark:bg-amber-950/40 px-3 py-1 text-xs font-bold text-[#1a365d] dark:text-[#D4AF37]">
+                    {ehRitoBrasileiro(lojaConfigWatch.ritoPotencia)
+                      ? '🏛️ Rito Brasileiro: Coluna do Sul → Coluna do Norte → Oriente'
+                      : `🏛️ ${lojaConfigWatch.ritoPotencia || 'Demais Ritos'}: Coluna do Norte → Coluna do Sul → Oriente`}
+                  </span>
                 </div>
 
                 <div className="space-y-6">
@@ -4061,27 +4069,55 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
                     listaIrmaos={irmaosQuadro}
                   />
 
-                  <ColunaFalasFieldArray
-                    tituloColuna="Coluna do Sul"
-                    subtituloRitualistico="Sob o comando do Ir∴ 1º Vigilante"
-                    fieldArrayName="palavraBemDaOrdem.colunaSul"
-                    control={control}
-                    register={register}
-                    watch={watch}
-                    setValue={setValue}
-                    listaIrmaos={irmaosQuadro}
-                  />
+                  {ehRitoBrasileiro(lojaConfigWatch.ritoPotencia) ? (
+                    <>
+                      <ColunaFalasFieldArray
+                        tituloColuna="Coluna do Sul"
+                        subtituloRitualistico="Sob o comando do Ir∴ 1º Vigilante (1ª Coluna no Rito Brasileiro)"
+                        fieldArrayName="palavraBemDaOrdem.colunaSul"
+                        control={control}
+                        register={register}
+                        watch={watch}
+                        setValue={setValue}
+                        listaIrmaos={irmaosQuadro}
+                      />
 
-                  <ColunaFalasFieldArray
-                    tituloColuna="Coluna do Norte"
-                    subtituloRitualistico="Sob o comando do Ir∴ 2º Vigilante"
-                    fieldArrayName="palavraBemDaOrdem.colunaNorte"
-                    control={control}
-                    register={register}
-                    watch={watch}
-                    setValue={setValue}
-                    listaIrmaos={irmaosQuadro}
-                  />
+                      <ColunaFalasFieldArray
+                        tituloColuna="Coluna do Norte"
+                        subtituloRitualistico="Sob o comando do Ir∴ 2º Vigilante (2ª Coluna no Rito Brasileiro)"
+                        fieldArrayName="palavraBemDaOrdem.colunaNorte"
+                        control={control}
+                        register={register}
+                        watch={watch}
+                        setValue={setValue}
+                        listaIrmaos={irmaosQuadro}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <ColunaFalasFieldArray
+                        tituloColuna="Coluna do Norte"
+                        subtituloRitualistico="Sob o comando do Ir∴ 2º Vigilante (1ª Coluna neste Rito)"
+                        fieldArrayName="palavraBemDaOrdem.colunaNorte"
+                        control={control}
+                        register={register}
+                        watch={watch}
+                        setValue={setValue}
+                        listaIrmaos={irmaosQuadro}
+                      />
+
+                      <ColunaFalasFieldArray
+                        tituloColuna="Coluna do Sul"
+                        subtituloRitualistico="Sob o comando do Ir∴ 1º Vigilante (2ª Coluna neste Rito)"
+                        fieldArrayName="palavraBemDaOrdem.colunaSul"
+                        control={control}
+                        register={register}
+                        watch={watch}
+                        setValue={setValue}
+                        listaIrmaos={irmaosQuadro}
+                      />
+                    </>
+                  )}
 
                   <ColunaFalasFieldArray
                     tituloColuna="Coluna do Oriente"

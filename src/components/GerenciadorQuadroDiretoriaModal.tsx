@@ -631,6 +631,9 @@ export const GerenciadorQuadroDiretoriaModal: React.FC<
                         }
                         className="w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-[#F9F8F6] dark:bg-slate-900 px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-100 disabled:opacity-80"
                       >
+                        <option value="nao_possui">
+                          -- Não possui no Rito / Omitir do Balaústre --
+                        </option>
                         {irmaosDraft.map((nome) => (
                           <option key={nome} value={nome}>
                             {nome}

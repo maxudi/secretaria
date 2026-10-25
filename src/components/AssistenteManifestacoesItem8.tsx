@@ -14,6 +14,7 @@ import {
   carregarIrmaosQuadroSalvos,
 } from '../types/balaustre';
 import {
+  ehRitoBrasileiro,
   formatarAutorFalaComCargoOuLoja,
   formatarTroncoComExtenso,
   identificarCargoDoIrmaoNaSessao,
@@ -79,15 +80,21 @@ export const AssistenteManifestacoesItem8: React.FC<
     null
   );
 
-  // Destino da fala: Coluna do Sul, Coluna do Norte, Coluna do Oriente ou Altar
+  // Destino da fala: ordem dinâmica conforme o Rito (Sul -> Norte no Rito Brasileiro; Norte -> Sul nos demais Ritos)
   type DestinoColunaKey =
     | 'palavraBemDaOrdem.colunaSul'
     | 'palavraBemDaOrdem.colunaNorte'
     | 'palavraBemDaOrdem.colunaOriente'
     | 'palavraBemDaOrdem.colunaAltar';
 
+  const ritoBrasileiroAtivo = ehRitoBrasileiro(
+    watch('configuracaoLoja.ritoPotencia')
+  );
+
   const [destinoColuna, setDestinoColuna] = useState<DestinoColunaKey>(
-    'palavraBemDaOrdem.colunaSul'
+    ritoBrasileiroAtivo
+      ? 'palavraBemDaOrdem.colunaSul'
+      : 'palavraBemDaOrdem.colunaNorte'
   );
 
   const OPCOES_DESTINO_COLUNA: {
@@ -95,16 +102,31 @@ export const AssistenteManifestacoesItem8: React.FC<
     label: string;
     botaoLabel: string;
   }[] = [
-    {
-      key: 'palavraBemDaOrdem.colunaSul',
-      label: 'Coluna do Sul',
-      botaoLabel: '＋ Registrar Fala na Coluna do Sul',
-    },
-    {
-      key: 'palavraBemDaOrdem.colunaNorte',
-      label: 'Coluna do Norte',
-      botaoLabel: '＋ Registrar Fala na Coluna do Norte',
-    },
+    ...(ritoBrasileiroAtivo
+      ? ([
+          {
+            key: 'palavraBemDaOrdem.colunaSul',
+            label: 'Coluna do Sul (1ª)',
+            botaoLabel: '＋ Registrar Fala na Coluna do Sul',
+          },
+          {
+            key: 'palavraBemDaOrdem.colunaNorte',
+            label: 'Coluna do Norte (2ª)',
+            botaoLabel: '＋ Registrar Fala na Coluna do Norte',
+          },
+        ] as const)
+      : ([
+          {
+            key: 'palavraBemDaOrdem.colunaNorte',
+            label: 'Coluna do Norte (1ª)',
+            botaoLabel: '＋ Registrar Fala na Coluna do Norte',
+          },
+          {
+            key: 'palavraBemDaOrdem.colunaSul',
+            label: 'Coluna do Sul (2ª)',
+            botaoLabel: '＋ Registrar Fala na Coluna do Sul',
+          },
+        ] as const)),
     {
       key: 'palavraBemDaOrdem.colunaOriente',
       label: 'Coluna do Oriente',
@@ -282,7 +304,11 @@ export const AssistenteManifestacoesItem8: React.FC<
       };
       const chave = mapaInverso[cargoFiltro];
       const oficial = chave && cargosSessao ? cargosSessao[chave] : undefined;
-      if (oficial && oficial.irmaoSelecionado) {
+      if (
+        oficial &&
+        oficial.irmaoSelecionado &&
+        oficial.irmaoSelecionado !== 'nao_possui'
+      ) {
         const autorFormatado = formatarAutorFalaComCargoOuLoja(
           {
             irmaoSelecionado: oficial.irmaoSelecionado,

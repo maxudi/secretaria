@@ -21,6 +21,28 @@ import {
   TipoSessao,
 } from '../types/balaustre';
 
+export const VALOR_CARGO_NAO_POSSUI = 'nao_possui';
+
+export function ehCargoSuprimido(selecionado?: string): boolean {
+  const val = (selecionado || '').trim().toLowerCase();
+  return !val || val === VALOR_CARGO_NAO_POSSUI;
+}
+
+/**
+ * Verifica se o Rito configurado na Loja é o Rito Brasileiro.
+ * - Rito Brasileiro: a palavra nas Colunas inicia na Coluna do Sul e depois passa à Coluna do Norte.
+ * - Demais Ritos (REAA, RER, Moderno, Adonhiramita, York, Schröder, etc.): inicia na Coluna do Norte e depois passa à Coluna do Sul.
+ */
+export function ehRitoBrasileiro(ritoPotencia?: string): boolean {
+  const rito = (
+    ritoPotencia ??
+    DEFAULT_CONFIGURACAO_LOJA.ritoPotencia ??
+    ''
+  ).trim();
+  if (!rito) return true;
+  return /brasileir/i.test(rito);
+}
+
 export const MAPA_CARGOS_DIRETORIA: {
   chave: keyof BalaustreFormData['cargos'];
   label: string;
@@ -42,12 +64,12 @@ export function formatarNomeIrmao(
   selecionado?: string,
   nomeOutro?: string
 ): string {
-  if (!selecionado) return '';
+  if (ehCargoSuprimido(selecionado)) return '';
   if (selecionado === 'outro') {
     const limpo = (nomeOutro || '').trim().replace(/^Ir∴\s*/i, '');
     return limpo ? `Ir∴ ${limpo.toUpperCase()}` : 'Ir∴ (Não informado)';
   }
-  return selecionado;
+  return selecionado || '';
 }
 
 /**
@@ -76,6 +98,9 @@ export function verificarCargoSubstituto(
   if (!item) return false;
 
   const oficialSessao = cargosSessao?.[item.chave];
+  if (oficialSessao && ehCargoSuprimido(oficialSessao.irmaoSelecionado)) {
+    return false;
+  }
   if (oficialSessao && oficialSessao.isTitular === false) {
     const nomeNoCargo = formatarNomeIrmao(
       oficialSessao.irmaoSelecionado,
@@ -92,6 +117,9 @@ export function verificarCargoSubstituto(
 
   const diretoria = diretoriaTitularParam || carregarDiretoriaTitularSalva();
   const titularDaFuncao = (diretoria?.[item.chave] || '').trim();
+  if (ehCargoSuprimido(titularDaFuncao)) {
+    return false;
+  }
   const nomeConferencia = (
     nomeIrmao ||
     (oficialSessao
@@ -146,13 +174,24 @@ export function identificarCargoDoIrmaoNaSessao(
   nomeIrmao?: string,
   cargos?: BalaustreFormData['cargos']
 ): string {
-  if (!nomeIrmao || nomeIrmao === 'outro' || !cargos) return '';
+  if (
+    !nomeIrmao ||
+    nomeIrmao === 'outro' ||
+    ehCargoSuprimido(nomeIrmao) ||
+    !cargos
+  ) {
+    return '';
+  }
 
   const diretoria = carregarDiretoriaTitularSalva();
 
   for (const item of MAPA_CARGOS_DIRETORIA) {
     const oficial = cargos[item.chave];
-    if (oficial && oficial.irmaoSelecionado === nomeIrmao) {
+    if (
+      oficial &&
+      !ehCargoSuprimido(oficial.irmaoSelecionado) &&
+      oficial.irmaoSelecionado === nomeIrmao
+    ) {
       return formatarRotuloCargoComSubstituto(
         nomeIrmao,
         item.label,
@@ -163,6 +202,58 @@ export function identificarCargoDoIrmaoNaSessao(
   }
 
   return '';
+}
+
+/**
+ * Retorna apenas os cargos da Diretoria que possuem Irmão designado na sessão
+ * (omitindo cargos marcados como "Não possui no Rito / Suprimir do Balaústre").
+ */
+export function obterCargosAtivosNaSessao(
+  cargos: BalaustreFormData['cargos'],
+  diretoriaTitularParam?: DiretoriaTitularMap
+): {
+  chave: keyof BalaustreFormData['cargos'];
+  label: string;
+  rotuloComSubstituto: string;
+  nomeFormatado: string;
+  ehVeneravel: boolean;
+}[] {
+  const resultado: {
+    chave: keyof BalaustreFormData['cargos'];
+    label: string;
+    rotuloComSubstituto: string;
+    nomeFormatado: string;
+    ehVeneravel: boolean;
+  }[] = [];
+
+  for (const item of MAPA_CARGOS_DIRETORIA) {
+    const oficial = cargos?.[item.chave];
+    if (!oficial || ehCargoSuprimido(oficial.irmaoSelecionado)) {
+      continue;
+    }
+    const nomeFormatado = formatarNomeIrmao(
+      oficial.irmaoSelecionado,
+      oficial.nomeOutro
+    );
+    if (!nomeFormatado) continue;
+
+    const rotuloComSubstituto = formatarRotuloCargoComSubstituto(
+      nomeFormatado,
+      item.label,
+      cargos,
+      diretoriaTitularParam
+    );
+
+    resultado.push({
+      chave: item.chave,
+      label: item.label,
+      rotuloComSubstituto,
+      nomeFormatado,
+      ehVeneravel: item.chave === 'veneravelMestre',
+    });
+  }
+
+  return resultado;
 }
 
 /**
@@ -965,8 +1056,22 @@ export function gerarTextoLiturgico(data: BalaustreFormData): string {
   // 1. ABERTURA E CARGOS
   txt += `${introData}, achando-se abertos os Augustos Trabalhos da nossa Ordem em ${descSessao} – EM ${descGrau}, reuniram-se os Obreiros às ${horaAberturaFmt}, com número legal, no Templo da ${nomeCompletoLoja}, situada à ${loja.enderecoTemplo}, com Abertura Ritualística, debaixo do Ponto Geométrico conhecido dos Filhos da V∴ ao Or∴ de ${loja.orienteCidadeUf}.\n\n`;
 
-  txt += `Os cargos em Loja foram ocupados da seguinte maneira: empunhando o Malhete da Sabedoria o ${rotuloCargo(vm, 'Venerável Mestre')} ${vm}; ${rotuloCargo(vig1, '1º Vigilante')} ${vig1}; ${rotuloCargo(vig2, '2º Vigilante')} ${vig2}; ${rotuloCargo(orador, 'Orador')} ${orador}; ${rotuloCargo(secretario, 'Secretário')} ${secretario}; ${rotuloCargo(tesoureiro, 'Tesoureiro')} ${tesoureiro}; ${rotuloCargo(chanceler, 'Chanceler')} ${chanceler}; e ${rotuloCargo(mc, 'Mestre de Cerimônias')} ${mc}.\n`;
-  txt += `Após o preenchimento dos lugares vagos pelo Ir∴ Mestre de Cerimônias, foi verificada a cobertura e segurança do Templo.\n\n`;
+  const cargosAtivos = obterCargosAtivosNaSessao(c);
+  if (cargosAtivos.length > 0) {
+    const trechosCargos = cargosAtivos.map((item, idx) => {
+      const prefixo = item.ehVeneravel
+        ? `empunhando o Malhete da Sabedoria o ${item.rotuloComSubstituto} ${item.nomeFormatado}`
+        : `${item.rotuloComSubstituto} ${item.nomeFormatado}`;
+      if (idx === cargosAtivos.length - 1 && cargosAtivos.length > 1) {
+        return `e ${prefixo}`;
+      }
+      return prefixo;
+    });
+    txt += `Os cargos em Loja foram ocupados da seguinte maneira: ${trechosCargos.join('; ')}.\n`;
+  }
+  txt += mc
+    ? `Após o preenchimento dos lugares vagos pelo Ir∴ Mestre de Cerimônias, foi verificada a cobertura e segurança do Templo.\n\n`
+    : `Após o preenchimento dos lugares vagos, foi verificada a cobertura e segurança do Templo.\n\n`;
 
   // 2. PRESENÇAS / QUÓRUM
   const totalPresentes =
@@ -1082,16 +1187,30 @@ export function gerarTextoLiturgico(data: BalaustreFormData): string {
     txt += `\n`;
   };
 
-  formatarColuna(
-    'COLUNA DO SUL',
-    'Reinou o silêncio na coluna do Sul.',
-    data.palavraBemDaOrdem.colunaSul
-  );
-  formatarColuna(
-    'COLUNA DO NORTE',
-    'Reinou o silêncio na coluna do Norte.',
-    data.palavraBemDaOrdem.colunaNorte
-  );
+  const ritoBrasileiro = ehRitoBrasileiro(loja.ritoPotencia);
+  if (ritoBrasileiro) {
+    formatarColuna(
+      'COLUNA DO SUL',
+      'Reinou o silêncio na coluna do Sul.',
+      data.palavraBemDaOrdem.colunaSul
+    );
+    formatarColuna(
+      'COLUNA DO NORTE',
+      'Reinou o silêncio na coluna do Norte.',
+      data.palavraBemDaOrdem.colunaNorte
+    );
+  } else {
+    formatarColuna(
+      'COLUNA DO NORTE',
+      'Reinou o silêncio na coluna do Norte.',
+      data.palavraBemDaOrdem.colunaNorte
+    );
+    formatarColuna(
+      'COLUNA DO SUL',
+      'Reinou o silêncio na coluna do Sul.',
+      data.palavraBemDaOrdem.colunaSul
+    );
+  }
   formatarColuna(
     'COLUNA DO ORIENTE',
     'Reinou o silêncio no Oriente.',
@@ -1103,29 +1222,39 @@ export function gerarTextoLiturgico(data: BalaustreFormData): string {
     data.palavraBemDaOrdem.colunaAltar || []
   );
 
-  txt += `${vm} (${rotuloCargo(vm, 'Venerável Mestre')}):\n`;
-  txt += `${
-    data.palavraBemDaOrdem.palavraVeneravelMestre?.trim() ||
-    'Agradeceu a presença e o zelo dos Obreiros do Quadro e Visitantes, encerrando as manifestações com votos de paz e concórdia.'
-  }\n\n`;
+  if (vm) {
+    txt += `${vm} (${rotuloCargo(vm, 'Venerável Mestre')}):\n`;
+    txt += `${
+      data.palavraBemDaOrdem.palavraVeneravelMestre?.trim() ||
+      'Agradeceu a presença e o zelo dos Obreiros do Quadro e Visitantes, encerrando as manifestações com votos de paz e concórdia.'
+    }\n\n`;
+  }
 
-  txt += `${orador} (${rotuloCargo(orador, 'Orador')}):\n`;
-  txt += `${
-    data.palavraBemDaOrdem.palavraOrador?.trim() ||
-    'Saudou os Irmãos presentes e visitantes, atestando que os trabalhos transcorreram de forma justa, perfeita e dentro da estrita legalidade maçônica.'
-  }\n\n`;
+  if (orador) {
+    txt += `${orador} (${rotuloCargo(orador, 'Orador')}):\n`;
+    txt += `${
+      data.palavraBemDaOrdem.palavraOrador?.trim() ||
+      'Saudou os Irmãos presentes e visitantes, atestando que os trabalhos transcorreram de forma justa, perfeita e dentro da estrita legalidade maçônica.'
+    }\n\n`;
+  }
 
   // 10. ENCERRAMENTO E ASSINATURAS
   txt += `ENCERRAMENTO RITUALÍSTICO:\n`;
-  txt += `Reinando silêncio em ambas as Colunas e no Oriente, o Venerável Mestre encerrou ritualisticamente os trabalhos às ${horaEncerramentoFmt}, com a formação da Cadeia de União e juramento de sigilo. E eu, ${secretario}, ${rotuloCargo(secretario, 'Secretário')}, lavrei o presente Balaústre que, após lido e achado conforme, vai assinado por mim, pelo Ir∴ ${rotuloCargo(orador, 'Orador')} e pelo ${rotuloCargo(vm, 'Venerável Mestre')}.\n\n`;
+  txt += `Reinando silêncio em ambas as Colunas e no Oriente, o Venerável Mestre encerrou ritualisticamente os trabalhos às ${horaEncerramentoFmt}, com a formação da Cadeia de União e juramento de sigilo. E eu, ${secretario || 'Ir∴ Secretário'}, ${rotuloCargo(secretario, 'Secretário')}, lavrei o presente Balaústre que, após lido e achado conforme, vai assinado por mim${orador ? `, pelo Ir∴ ${rotuloCargo(orador, 'Orador')}` : ''} e pelo ${rotuloCargo(vm, 'Venerável Mestre')}.\n\n`;
 
   txt += `Or∴ de ${loja.orienteCidadeUf}, ${data.dataSessao.split('-').reverse().join('/')}.\n\n`;
-  txt += `____________________________________________________\n`;
-  txt += `${secretario} — ${rotuloCargo(secretario, 'Secretário')}\n\n`;
-  txt += `____________________________________________________\n`;
-  txt += `${vm} — ${rotuloCargo(vm, 'Venerável Mestre')}\n\n`;
-  txt += `____________________________________________________\n`;
-  txt += `${orador} — ${rotuloCargo(orador, 'Orador')}\n`;
+  if (secretario) {
+    txt += `____________________________________________________\n`;
+    txt += `${secretario} — ${rotuloCargo(secretario, 'Secretário')}\n\n`;
+  }
+  if (vm) {
+    txt += `____________________________________________________\n`;
+    txt += `${vm} — ${rotuloCargo(vm, 'Venerável Mestre')}\n\n`;
+  }
+  if (orador) {
+    txt += `____________________________________________________\n`;
+    txt += `${orador} — ${rotuloCargo(orador, 'Orador')}\n`;
+  }
 
   return txt;
 }

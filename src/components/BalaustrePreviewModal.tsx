@@ -6,12 +6,15 @@ import {
 import {
   comporRedacaoItemOrdemDia,
   dataPorExtensoLiturgica,
+  ehCargoSuprimido,
+  ehRitoBrasileiro,
   formatarAutorFalaComCargoOuLoja,
   formatarListaBalaustresLidos,
   formatarNomeIrmao,
   formatarRotuloCargoComSubstituto,
   formatarTroncoComExtenso,
   gerarTextoLiturgico,
+  obterCargosAtivosNaSessao,
   obterDescricaoGrau,
   obterDescricaoTipoSessao,
 } from '../utils/liturgyFormatter';
@@ -70,6 +73,11 @@ export const BalaustrePreviewModal: React.FC<BalaustrePreviewModalProps> = ({
   };
 
   const c = data.cargos;
+  const cargosAtivos = obterCargosAtivosNaSessao(c);
+  const ritoBrasileiro = ehRitoBrasileiro(loja.ritoPotencia);
+  const possuiMestreCerimonias = !ehCargoSuprimido(
+    c.mestreCerimonias?.irmaoSelecionado
+  );
   const vm = formatarNomeIrmao(
     c.veneravelMestre.irmaoSelecionado,
     c.veneravelMestre.nomeOutro
@@ -272,94 +280,27 @@ export const BalaustrePreviewModal: React.FC<BalaustrePreviewModalProps> = ({
                 Ritualisticamente, debaixo do Ponto Geométrico conhecido dos filhos da V∴,
                 Oriente de <strong>{loja.orienteCidadeUf}</strong>.
               
-                Os cargos em Loja foram ocupados da seguinte maneira:
-                empunhando o Malhete da Sabedoria o{' '}
-                {formatarRotuloCargoComSubstituto(vm, 'Venerável Mestre', c)}{' '}
-                <strong>{vm}</strong>;{' '}
-                {formatarRotuloCargoComSubstituto(
-                  formatarNomeIrmao(
-                    c.primeiroVigilante.irmaoSelecionado,
-                    c.primeiroVigilante.nomeOutro
-                  ),
-                  '1º Vigilante',
-                  c
-                )}{' '}
-                <strong>
-                  {formatarNomeIrmao(
-                    c.primeiroVigilante.irmaoSelecionado,
-                    c.primeiroVigilante.nomeOutro
-                  )}
-                </strong>
-                ;{' '}
-                {formatarRotuloCargoComSubstituto(
-                  formatarNomeIrmao(
-                    c.segundoVigilante.irmaoSelecionado,
-                    c.segundoVigilante.nomeOutro
-                  ),
-                  '2º Vigilante',
-                  c
-                )}{' '}
-                <strong>
-                  {formatarNomeIrmao(
-                    c.segundoVigilante.irmaoSelecionado,
-                    c.segundoVigilante.nomeOutro
-                  )}
-                </strong>
-                ; {formatarRotuloCargoComSubstituto(orador, 'Orador', c)}{' '}
-                <strong>{orador}</strong>;{' '}
-                {formatarRotuloCargoComSubstituto(secretario, 'Secretário', c)}{' '}
-                <strong>{secretario}</strong>;{' '}
-                {formatarRotuloCargoComSubstituto(
-                  formatarNomeIrmao(
-                    c.tesoureiro.irmaoSelecionado,
-                    c.tesoureiro.nomeOutro
-                  ),
-                  'Tesoureiro',
-                  c
-                )}{' '}
-                <strong>
-                  {formatarNomeIrmao(
-                    c.tesoureiro.irmaoSelecionado,
-                    c.tesoureiro.nomeOutro
-                  )}
-                </strong>
-                ;{' '}
-                {formatarRotuloCargoComSubstituto(
-                  formatarNomeIrmao(
-                    c.chanceler.irmaoSelecionado,
-                    c.chanceler.nomeOutro
-                  ),
-                  'Chanceler',
-                  c
-                )}{' '}
-                <strong>
-                  {formatarNomeIrmao(
-                    c.chanceler.irmaoSelecionado,
-                    c.chanceler.nomeOutro
-                  )}
-                </strong>
-                ;{' '}
-                {formatarRotuloCargoComSubstituto(
-                  formatarNomeIrmao(
-                    c.mestreCerimonias.irmaoSelecionado,
-                    c.mestreCerimonias.nomeOutro
-                  ),
-                  'Mestre de Cerimônias',
-                  c
-                )}{' '}
-                <strong>
-                  {formatarNomeIrmao(
-                    c.mestreCerimonias.irmaoSelecionado,
-                    c.mestreCerimonias.nomeOutro
-                  )}
-                </strong>
-                .{' '}
-                
-                
+                {cargosAtivos.length > 0 && (
+                  <>
+                    {' '}
+                    Os cargos em Loja foram ocupados da seguinte maneira:{' '}
+                    {cargosAtivos.map((item, idx) => (
+                      <React.Fragment key={item.chave}>
+                        {idx > 0 && '; '}
+                        {item.ehVeneravel
+                          ? `empunhando o Malhete da Sabedoria o ${item.rotuloComSubstituto} `
+                          : `${item.rotuloComSubstituto} `}
+                        <strong>{item.nomeFormatado}</strong>
+                      </React.Fragment>
+                    ))}
+                    .
+                  </>
+                )}
               </p>
               <p>
-                  Após o preenchimento dos lugares vagos e da Câmara do Meio pelo Ir∴ Mestre de Cerimônias é verificada a segurança do Templo.
-
+                {possuiMestreCerimonias
+                  ? 'Após o preenchimento dos lugares vagos e da Câmara do Meio pelo Ir∴ Mestre de Cerimônias é verificada a segurança do Templo.'
+                  : 'Após o preenchimento dos lugares vagos e da Câmara do Meio é verificada a segurança do Templo.'}
               </p>
 
               {/* Quórum / Presenças */}
@@ -512,63 +453,68 @@ export const BalaustrePreviewModal: React.FC<BalaustrePreviewModalProps> = ({
                       {data.palavraBemDaOrdem.textoConsolidadoAta.trim()}
                     </div>
                   )}
-                  <div>
-                    <strong>Coluna do Sul:</strong>
-                    {data.palavraBemDaOrdem.colunaSul.length > 0 ? (
-                      <>
-                        <ul className="list-disc pl-5">
-                          {data.palavraBemDaOrdem.colunaSul.map((f, i) => (
-                            <li key={i}>
-                              <strong>
-                                {formatarAutorFalaComCargoOuLoja(
-                                  f,
-                                  data.cargos
-                                )}
-                                :
-                              </strong>{' '}
-                              {f.resumoFala}
-                            </li>
-                          ))}
-                        </ul>
-                        <p className="mt-1 italic text-slate-700">
-                          Reinou o silêncio na coluna do Sul.
-                        </p>
-                      </>
-                    ) : (
-                      <span className="ml-2 italic text-slate-600">
-                        Reinou o silêncio na coluna do Sul.
-                      </span>
-                    )}
-                  </div>
-
-                  <div>
-                    <strong>Coluna do Norte:</strong>
-                    {data.palavraBemDaOrdem.colunaNorte.length > 0 ? (
-                      <>
-                        <ul className="list-disc pl-5">
-                          {data.palavraBemDaOrdem.colunaNorte.map((f, i) => (
-                            <li key={i}>
-                              <strong>
-                                {formatarAutorFalaComCargoOuLoja(
-                                  f,
-                                  data.cargos
-                                )}
-                                :
-                              </strong>{' '}
-                              {f.resumoFala}
-                            </li>
-                          ))}
-                        </ul>
-                        <p className="mt-1 italic text-slate-700">
-                          Reinou o silêncio em ambas as colunas.
-                        </p>
-                      </>
-                    ) : (
-                      <span className="ml-2 italic text-slate-600">
-                        Reinou o silêncio em ambas as colunas.
-                      </span>
-                    )}
-                  </div>
+                  {(ritoBrasileiro
+                    ? [
+                        {
+                          key: 'sul',
+                          titulo: 'Coluna do Sul',
+                          falas: data.palavraBemDaOrdem.colunaSul,
+                          fraseSilencio: 'Reinou o silêncio na coluna do Sul.',
+                        },
+                        {
+                          key: 'norte',
+                          titulo: 'Coluna do Norte',
+                          falas: data.palavraBemDaOrdem.colunaNorte,
+                          fraseSilencio:
+                            'Reinou o silêncio em ambas as colunas.',
+                        },
+                      ]
+                    : [
+                        {
+                          key: 'norte',
+                          titulo: 'Coluna do Norte',
+                          falas: data.palavraBemDaOrdem.colunaNorte,
+                          fraseSilencio:
+                            'Reinou o silêncio na coluna do Norte.',
+                        },
+                        {
+                          key: 'sul',
+                          titulo: 'Coluna do Sul',
+                          falas: data.palavraBemDaOrdem.colunaSul,
+                          fraseSilencio:
+                            'Reinou o silêncio em ambas as colunas.',
+                        },
+                      ]
+                  ).map((col) => (
+                    <div key={col.key}>
+                      <strong>{col.titulo}:</strong>
+                      {col.falas.length > 0 ? (
+                        <>
+                          <ul className="list-disc pl-5">
+                            {col.falas.map((f, i) => (
+                              <li key={i}>
+                                <strong>
+                                  {formatarAutorFalaComCargoOuLoja(
+                                    f,
+                                    data.cargos
+                                  )}
+                                  :
+                                </strong>{' '}
+                                {f.resumoFala}
+                              </li>
+                            ))}
+                          </ul>
+                          <p className="mt-1 italic text-slate-700">
+                            {col.fraseSilencio}
+                          </p>
+                        </>
+                      ) : (
+                        <span className="ml-2 italic text-slate-600">
+                          {col.fraseSilencio}
+                        </span>
+                      )}
+                    </div>
+                  ))}
 
                   <div>
                     <strong>Oriente:</strong>
@@ -630,36 +576,40 @@ export const BalaustrePreviewModal: React.FC<BalaustrePreviewModalProps> = ({
                     )}
                   </div>
 
-                  <p>
-                    <strong>
-                      {formatarAutorFalaComCargoOuLoja(
-                        {
-                          irmaoSelecionado: c.veneravelMestre.irmaoSelecionado,
-                          nomeOutro: c.veneravelMestre.nomeOutro,
-                          cargoIrmao: 'Venerável Mestre',
-                        },
-                        data.cargos
-                      )}
-                      :
-                    </strong>{' '}
-                    {data.palavraBemDaOrdem.palavraVeneravelMestre ||
-                      'Agradeceu a presença dos Irmãos e encerrou ritualisticamente a sessão.'}
-                  </p>
-                  <p>
-                    <strong>
-                      {formatarAutorFalaComCargoOuLoja(
-                        {
-                          irmaoSelecionado: c.orador.irmaoSelecionado,
-                          nomeOutro: c.orador.nomeOutro,
-                          cargoIrmao: 'Orador',
-                        },
-                        data.cargos
-                      )}
-                      :
-                    </strong>{' '}
-                    {data.palavraBemDaOrdem.palavraOrador ||
-                      'Conclusões legais favoráveis, declarando os trabalhos justos e perfeitos.'}
-                  </p>
+                  {vm && (
+                    <p>
+                      <strong>
+                        {formatarAutorFalaComCargoOuLoja(
+                          {
+                            irmaoSelecionado: c.veneravelMestre.irmaoSelecionado,
+                            nomeOutro: c.veneravelMestre.nomeOutro,
+                            cargoIrmao: 'Venerável Mestre',
+                          },
+                          data.cargos
+                        )}
+                        :
+                      </strong>{' '}
+                      {data.palavraBemDaOrdem.palavraVeneravelMestre ||
+                        'Agradeceu a presença dos Irmãos e encerrou ritualisticamente a sessão.'}
+                    </p>
+                  )}
+                  {orador && (
+                    <p>
+                      <strong>
+                        {formatarAutorFalaComCargoOuLoja(
+                          {
+                            irmaoSelecionado: c.orador.irmaoSelecionado,
+                            nomeOutro: c.orador.nomeOutro,
+                            cargoIrmao: 'Orador',
+                          },
+                          data.cargos
+                        )}
+                        :
+                      </strong>{' '}
+                      {data.palavraBemDaOrdem.palavraOrador ||
+                        'Conclusões legais favoráveis, declarando os trabalhos justos e perfeitos.'}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -669,15 +619,20 @@ export const BalaustrePreviewModal: React.FC<BalaustrePreviewModalProps> = ({
                   Trabalhos encerrados ritualisticamente às{' '}
                   <strong>{data.horarioEncerramento.replace(':', 'h')}</strong>{' '}
                   no Or∴ de <strong>{loja.orienteCidadeUf}</strong>. Para
-                  constar, eu, <strong>{secretario}</strong>,{' '}
+                  constar, eu, <strong>{secretario || 'Ir∴ Secretário'}</strong>,{' '}
                   {formatarRotuloCargoComSubstituto(
                     secretario,
                     'Secretário',
                     c
                   )}
-                  , lavrei o presente Balaústre que vai assinado por mim, pelo
-                  Ir∴ {formatarRotuloCargoComSubstituto(orador, 'Orador', c)} e
-                  pelo{' '}
+                  , lavrei o presente Balaústre que vai assinado por mim
+                  {orador && (
+                    <>
+                      , pelo Ir∴{' '}
+                      {formatarRotuloCargoComSubstituto(orador, 'Orador', c)}
+                    </>
+                  )}{' '}
+                  e pelo{' '}
                   {formatarRotuloCargoComSubstituto(
                     vm,
                     'Venerável Mestre',
@@ -687,32 +642,38 @@ export const BalaustrePreviewModal: React.FC<BalaustrePreviewModalProps> = ({
                 </p>
 
                 <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 print:grid-cols-3 gap-8 text-center text-xs">
-                  <div className="border-t border-slate-700 pt-2">
-                    <p className="font-bold text-[#0B192C]">{secretario}</p>
-                    <p className="text-slate-600">
-                      {formatarRotuloCargoComSubstituto(
-                        secretario,
-                        'Secretário',
-                        c
-                      )}
-                    </p>
-                  </div>
-                  <div className="border-t border-slate-700 pt-2">
-                    <p className="font-bold text-[#0B192C]">{vm}</p>
-                    <p className="text-slate-600">
-                      {formatarRotuloCargoComSubstituto(
-                        vm,
-                        'Venerável Mestre',
-                        c
-                      )}
-                    </p>
-                  </div>
-                  <div className="border-t border-slate-700 pt-2">
-                    <p className="font-bold text-[#0B192C]">{orador}</p>
-                    <p className="text-slate-600">
-                      {formatarRotuloCargoComSubstituto(orador, 'Orador', c)}
-                    </p>
-                  </div>
+                  {secretario && (
+                    <div className="border-t border-slate-700 pt-2">
+                      <p className="font-bold text-[#0B192C]">{secretario}</p>
+                      <p className="text-slate-600">
+                        {formatarRotuloCargoComSubstituto(
+                          secretario,
+                          'Secretário',
+                          c
+                        )}
+                      </p>
+                    </div>
+                  )}
+                  {vm && (
+                    <div className="border-t border-slate-700 pt-2">
+                      <p className="font-bold text-[#0B192C]">{vm}</p>
+                      <p className="text-slate-600">
+                        {formatarRotuloCargoComSubstituto(
+                          vm,
+                          'Venerável Mestre',
+                          c
+                        )}
+                      </p>
+                    </div>
+                  )}
+                  {orador && (
+                    <div className="border-t border-slate-700 pt-2">
+                      <p className="font-bold text-[#0B192C]">{orador}</p>
+                      <p className="text-slate-600">
+                        {formatarRotuloCargoComSubstituto(orador, 'Orador', c)}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
 

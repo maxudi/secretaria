@@ -1093,7 +1093,7 @@ export function gerarTextoLiturgico(data: BalaustreFormData): string {
       txt += `${frase}\n`;
     });
   } else {
-    txt += `- Nenhum Balaústre foi lido nesta sessão.\n`;
+    txt += `Leitura suprimida\n`;
   }
   txt += `\n`;
 

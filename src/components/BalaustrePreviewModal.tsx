@@ -325,9 +325,7 @@ export const BalaustrePreviewModal: React.FC<BalaustrePreviewModalProps> = ({
                     ))}
                   </div>
                 ) : (
-                  <p className="italic text-slate-600">
-                    Leitura suprimida, não houve Balaústres lidos nesta sessão.
-                  </p>
+                  <p className="italic text-slate-600">Leitura suprimida</p>
                 )}
               </div>
 

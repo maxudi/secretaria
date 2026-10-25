@@ -184,16 +184,7 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
         qtdQuadroPresentes: '' as any,
         qtdVisitantesPresentes: '' as any,
       },
-      balaustresLidos:
-        ultimoNumeroInicialLoja > 0
-          ? [
-              {
-                numero: ultimoNumeroInicialLoja,
-                statusAprovacao: 'aprovado_sem_restricoes',
-                emendasObservacao: '',
-              },
-            ]
-          : [],
+      balaustresLidos: [],
       expedientesRecebidos: [],
       sacoPropostasResultadoGeral:
         'O saco de propostas e informações colheu apenas bons fluidos.',
@@ -287,20 +278,6 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
       // Atualiza o próximo número de Balaústre de acordo com a sequência real da Loja ativa
       const proximoDaLoja = (res.ultimoNumeroBalaustre || 0) + 1;
       setValue('numeroBalaustre', proximoDaLoja);
-      if (res.ultimoNumeroBalaustre > 0) {
-        const lidosAtuais = getValues('balaustresLidos') || [];
-        if (lidosAtuais.length <= 1) {
-          setValue('balaustresLidos', [
-            {
-              numero: res.ultimoNumeroBalaustre,
-              statusAprovacao: 'aprovado_sem_restricoes',
-              emendasObservacao: lidosAtuais[0]?.emendasObservacao || '',
-            },
-          ]);
-        }
-      } else {
-        setValue('balaustresLidos', []);
-      }
 
       if (res.configLoja) {
         const atual = getValues('configuracaoLoja');
@@ -553,16 +530,7 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
         qtdQuadroPresentes: '' as any,
         qtdVisitantesPresentes: '' as any,
       },
-      balaustresLidos:
-        proximoNumero > 1
-          ? [
-              {
-                numero: proximoNumero - 1,
-                statusAprovacao: 'aprovado_sem_restricoes',
-                emendasObservacao: '',
-              },
-            ]
-          : [],
+      balaustresLidos: [],
       expedientesRecebidos: [],
       sacoPropostasResultadoGeral: gerarFrasePadraoSacoPropostas(0),
       itensSacoPropostas: [],
@@ -1383,8 +1351,8 @@ export const BalaustreForm: React.FC<BalaustreFormProps> = ({
                 </div>
 
                 {balaustresArray.fields.length === 0 ? (
-                  <p className="text-xs italic text-slate-500 py-3">
-                    Nenhum balaústre anterior registrado para leitura.
+                  <p className="text-xs italic text-slate-600 dark:text-slate-400 py-3">
+                    Texto padrão no Balaústre: <strong>"Leitura suprimida"</strong> (clique em "＋ Adicionar Balaústre Lido" caso tenha havido leitura na sessão).
                   </p>
                 ) : (
                   <div className="space-y-3">
